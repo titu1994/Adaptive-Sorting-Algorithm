@@ -60,16 +60,20 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         // Constructs the Symbol table
         public void Codify()
         {
-            codebook = new Codification(Table);
+            string[] cols = { "Array Size", "Runs", "Selected Sorting Algorithm" };
+            string[] cols_ip = { "Array Size", "Runs" };
+            string cols_op = "Selected Sorting Algorithm";
+            codebook = new Codification(Table, cols);
             Symbols = codebook.Apply(Table);
-            Inputs = Symbols.ToArray(inputColumns);
-            Outputs = Symbols.ToArray<int>(outputColumn);
+            Inputs = Symbols.ToArray(cols_ip);
+            Outputs = Symbols.ToArray<int>(cols_op);
         }
 
         // Loads up the Decision Tree
         public void CreateDecisionTree()
         {
-            var attributes = DecisionVariable.FromCodebook(codebook, inputColumns);
+            string[] cols = { "Array Size" , "Runs" };
+            var attributes = DecisionVariable.FromCodebook(codebook, cols);
             tree = new DecisionTree(attributes, 6);
         }
 
