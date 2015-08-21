@@ -85,9 +85,10 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         }
 
         // Actual Selection using Decision Tree
-        public string GetBestAlgorithmForInput(double[] input)
+        public string GetBestAlgorithmForInput(string[] input)
         {
-            int result = tree.Compute(input);
+            double[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
+            int result = tree.Compute(codes);
             string bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
             return bestAlgorithm;
         }
