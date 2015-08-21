@@ -85,6 +85,9 @@
     <Compile Include="Managers\JsonManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -105,90 +108,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Resource Include="Resources\100-AlmostSorted-1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\100-AlmostSorted-2.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\100-AlmostSorted-3.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\100-AlmostSorted-4.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\100-AlmostSorted-5.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\100-Random.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\100-ReverseSorted.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000-AlmostSorted-1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000-AlmostSorted-2.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000-AlmostSorted-3.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000-AlmostSorted-4.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000-AlmostSorted-5.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000-Random.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000-ReverseSorted.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\10000-AlmostSorted-1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\10000-AlmostSorted-2.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\10000-AlmostSorted-3.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\10000-AlmostSorted-4.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\10000-AlmostSorted-5.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\10000-Random.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\10000-ReverseSorted.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000000-AlmostSorted-1.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000000-AlmostSorted-2.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000000-AlmostSorted-3.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000000-AlmostSorted-4.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000000-AlmostSorted-5.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000000-Random.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\1000000-ReverseSorted.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <None Include="Resources\100-AlmostSorted-1.json" />
+    <None Include="Resources\100-AlmostSorted-2.json" />
+    <None Include="Resources\100-AlmostSorted-3.json" />
+    <None Include="Resources\100-AlmostSorted-4.json" />
+    <None Include="Resources\100-AlmostSorted-5.json" />
+    <None Include="Resources\100-Random.json" />
+    <None Include="Resources\100-ReverseSorted.json" />
+    <None Include="Resources\1000-AlmostSorted-1.json" />
+    <None Include="Resources\1000-AlmostSorted-2.json" />
+    <None Include="Resources\1000-AlmostSorted-3.json" />
+    <None Include="Resources\1000-AlmostSorted-4.json" />
+    <None Include="Resources\1000-AlmostSorted-5.json" />
+    <None Include="Resources\1000-Random.json" />
+    <None Include="Resources\1000-ReverseSorted.json" />
+    <None Include="Resources\10000-AlmostSorted-1.json" />
+    <None Include="Resources\10000-AlmostSorted-2.json" />
+    <None Include="Resources\10000-AlmostSorted-3.json" />
+    <None Include="Resources\10000-AlmostSorted-4.json" />
+    <None Include="Resources\10000-AlmostSorted-5.json" />
+    <None Include="Resources\10000-Random.json" />
+    <None Include="Resources\10000-ReverseSorted.json" />
+    <None Include="Resources\1000000-AlmostSorted-1.json" />
+    <None Include="Resources\1000000-AlmostSorted-2.json" />
+    <None Include="Resources\1000000-AlmostSorted-3.json" />
+    <None Include="Resources\1000000-AlmostSorted-4.json" />
+    <None Include="Resources\1000000-AlmostSorted-5.json" />
+    <None Include="Resources\1000000-Random.json" />
+    <None Include="Resources\1000000-ReverseSorted.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

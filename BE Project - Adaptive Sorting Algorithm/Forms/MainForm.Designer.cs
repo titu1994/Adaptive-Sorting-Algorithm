@@ -28,12 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ArrayGridView = new System.Windows.Forms.DataGridView();
+            this.loadArrayButton = new System.Windows.Forms.Button();
+            this.ErrorLabel = new System.Windows.Forms.Label();
+            this.ErrorLabelValue = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DataSetSizeValue = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.ArrayGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // ArrayGridView
+            // 
+            this.ArrayGridView.AllowUserToAddRows = false;
+            this.ArrayGridView.AllowUserToDeleteRows = false;
+            this.ArrayGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ArrayGridView.GridColor = System.Drawing.Color.White;
+            this.ArrayGridView.Location = new System.Drawing.Point(13, 89);
+            this.ArrayGridView.Name = "ArrayGridView";
+            this.ArrayGridView.ReadOnly = true;
+            this.ArrayGridView.Size = new System.Drawing.Size(759, 445);
+            this.ArrayGridView.TabIndex = 0;
+            // 
+            // loadArrayButton
+            // 
+            this.loadArrayButton.BackColor = System.Drawing.Color.White;
+            this.loadArrayButton.Location = new System.Drawing.Point(13, 13);
+            this.loadArrayButton.Name = "loadArrayButton";
+            this.loadArrayButton.Size = new System.Drawing.Size(111, 45);
+            this.loadArrayButton.TabIndex = 1;
+            this.loadArrayButton.Text = "Load Arrays";
+            this.loadArrayButton.UseVisualStyleBackColor = false;
+            this.loadArrayButton.Click += new System.EventHandler(this.loadArrayButton_Click);
+            // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.BackColor = System.Drawing.Color.White;
+            this.ErrorLabel.Location = new System.Drawing.Point(616, 9);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(29, 13);
+            this.ErrorLabel.TabIndex = 2;
+            this.ErrorLabel.Text = "Error";
+            // 
+            // ErrorLabelValue
+            // 
+            this.ErrorLabelValue.AutoSize = true;
+            this.ErrorLabelValue.BackColor = System.Drawing.Color.White;
+            this.ErrorLabelValue.Location = new System.Drawing.Point(717, 12);
+            this.ErrorLabelValue.Name = "ErrorLabelValue";
+            this.ErrorLabelValue.Size = new System.Drawing.Size(0, 13);
+            this.ErrorLabelValue.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(616, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Data Set Size";
+            // 
+            // DataSetSizeValue
+            // 
+            this.DataSetSizeValue.AutoSize = true;
+            this.DataSetSizeValue.Location = new System.Drawing.Point(720, 43);
+            this.DataSetSizeValue.Name = "DataSetSizeValue";
+            this.DataSetSizeValue.Size = new System.Drawing.Size(16, 13);
+            this.DataSetSizeValue.TabIndex = 5;
+            this.DataSetSizeValue.Text = "...";
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.DataSetSizeValue);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ErrorLabelValue);
+            this.Controls.Add(this.ErrorLabel);
+            this.Controls.Add(this.loadArrayButton);
+            this.Controls.Add(this.ArrayGridView);
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Adaptive Sorting";
+            ((System.ComponentModel.ISupportInitialize)(this.ArrayGridView)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView ArrayGridView;
+        private System.Windows.Forms.Button loadArrayButton;
+        private System.Windows.Forms.Label ErrorLabel;
+        private System.Windows.Forms.Label ErrorLabelValue;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label DataSetSizeValue;
     }
 }
 

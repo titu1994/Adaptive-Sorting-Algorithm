@@ -119,87 +119,87 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="_1000000_AlmostSorted_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000000-AlmostSorted-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000000-AlmostSorted-1.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000000_AlmostSorted_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000000-AlmostSorted-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000000-AlmostSorted-2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000000_AlmostSorted_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000000-AlmostSorted-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000000-AlmostSorted-3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000000_AlmostSorted_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000000-AlmostSorted-4.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000000-AlmostSorted-4.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000000_AlmostSorted_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000000-AlmostSorted-5.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000000-AlmostSorted-5.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000000_Random" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000000-Random.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000000-Random.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000000_ReverseSorted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000000-ReverseSorted.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000000-ReverseSorted.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_10000_AlmostSorted_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10000-AlmostSorted-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\10000-AlmostSorted-1.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_10000_AlmostSorted_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10000-AlmostSorted-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\10000-AlmostSorted-2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_10000_AlmostSorted_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10000-AlmostSorted-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\10000-AlmostSorted-3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_10000_AlmostSorted_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10000-AlmostSorted-4.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\10000-AlmostSorted-4.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_10000_AlmostSorted_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10000-AlmostSorted-5.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\10000-AlmostSorted-5.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_10000_Random" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10000-Random.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\10000-Random.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_10000_ReverseSorted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10000-ReverseSorted.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\10000-ReverseSorted.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000_AlmostSorted_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000-AlmostSorted-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000-AlmostSorted-1.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000_AlmostSorted_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000-AlmostSorted-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000-AlmostSorted-2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000_AlmostSorted_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000-AlmostSorted-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000-AlmostSorted-3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000_AlmostSorted_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000-AlmostSorted-4.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000-AlmostSorted-4.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000_AlmostSorted_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000-AlmostSorted-5.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000-AlmostSorted-5.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000_Random" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000-Random.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000-Random.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_1000_ReverseSorted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1000-ReverseSorted.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\1000-ReverseSorted.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_100_AlmostSorted_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\100-AlmostSorted-1.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\100-AlmostSorted-1.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_100_AlmostSorted_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\100-AlmostSorted-2.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\100-AlmostSorted-2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_100_AlmostSorted_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\100-AlmostSorted-3.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\100-AlmostSorted-3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_100_AlmostSorted_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\100-AlmostSorted-4.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\100-AlmostSorted-4.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_100_AlmostSorted_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\100-AlmostSorted-5.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\100-AlmostSorted-5.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_100_Random" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\100-Random.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\100-Random.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
   <data name="_100_ReverseSorted" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\100-ReverseSorted.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>..\Resources\100-ReverseSorted.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
 </root>

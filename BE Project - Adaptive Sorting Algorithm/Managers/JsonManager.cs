@@ -12,46 +12,46 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
     class JsonManager
     {
         // File names for Array of size 100
-        private static string[] array100 = {
-        Encoding.UTF8.GetString(Resources._100_Random),
-        Encoding.UTF8.GetString(Resources._100_AlmostSorted_1),
-        Encoding.UTF8.GetString(Resources._100_AlmostSorted_2),
-        Encoding.UTF8.GetString(Resources._100_AlmostSorted_3),
-        Encoding.UTF8.GetString(Resources._100_AlmostSorted_4),
-        Encoding.UTF8.GetString(Resources._100_AlmostSorted_5),
-        Encoding.UTF8.GetString(Resources._100_ReverseSorted)
+        public static string[] array100 = {
+        Resources._100_Random,
+        Resources._100_AlmostSorted_1,
+        Resources._100_AlmostSorted_2,
+        Resources._100_AlmostSorted_3,
+        Resources._100_AlmostSorted_4,
+        Resources._100_AlmostSorted_5,
+        Resources._100_ReverseSorted
     };
         // File names for Array of size 1000 
-        private static string[] array1000 = {
-        Encoding.UTF8.GetString(Resources._1000_Random),
-        Encoding.UTF8.GetString(Resources._1000_AlmostSorted_1),
-        Encoding.UTF8.GetString(Resources._1000_AlmostSorted_2),
-        Encoding.UTF8.GetString(Resources._1000_AlmostSorted_3),
-        Encoding.UTF8.GetString(Resources._1000_AlmostSorted_4),
-        Encoding.UTF8.GetString(Resources._1000_AlmostSorted_5),
-        Encoding.UTF8.GetString(Resources._1000_ReverseSorted)
+        public static string[] array1000 = {
+        Resources._1000_Random,
+        Resources._1000_AlmostSorted_1,
+        Resources._1000_AlmostSorted_2,
+        Resources._1000_AlmostSorted_3,
+        Resources._1000_AlmostSorted_4,
+        Resources._1000_AlmostSorted_5,
+        Resources._1000_ReverseSorted
     };
 
         // File names for Array of size 10000 
-        private static string[] array10000 = {
-        Encoding.UTF8.GetString(Resources._10000_Random),
-        Encoding.UTF8.GetString(Resources._10000_AlmostSorted_1),
-        Encoding.UTF8.GetString(Resources._10000_AlmostSorted_2),
-        Encoding.UTF8.GetString(Resources._10000_AlmostSorted_3),
-        Encoding.UTF8.GetString(Resources._10000_AlmostSorted_4),
-        Encoding.UTF8.GetString(Resources._10000_AlmostSorted_5),
-        Encoding.UTF8.GetString(Resources._10000_ReverseSorted)
+        public static string[] array10000 = {
+        Resources._10000_Random,
+        Resources._10000_AlmostSorted_1,
+        Resources._10000_AlmostSorted_2,
+        Resources._10000_AlmostSorted_3,
+        Resources._10000_AlmostSorted_4,
+        Resources._10000_AlmostSorted_5,
+        Resources._10000_ReverseSorted
     };
 
         // File names for Array of size 1000000 
-        private static string[] array1000000 = {
-        Encoding.UTF8.GetString(Resources._1000000_Random),
-        Encoding.UTF8.GetString(Resources._1000000_AlmostSorted_1),
-        Encoding.UTF8.GetString(Resources._1000000_AlmostSorted_2),
-        Encoding.UTF8.GetString(Resources._1000000_AlmostSorted_3),
-        Encoding.UTF8.GetString(Resources._1000000_AlmostSorted_4),
-        Encoding.UTF8.GetString(Resources._1000000_AlmostSorted_5),
-        Encoding.UTF8.GetString(Resources._1000000_ReverseSorted)
+        public static string[] array1000000 = {
+        Resources._1000000_Random,
+        Resources._1000000_AlmostSorted_1,
+        Resources._1000000_AlmostSorted_2,
+        Resources._1000000_AlmostSorted_3,
+        Resources._1000000_AlmostSorted_4,
+        Resources._1000000_AlmostSorted_5,
+        Resources._1000000_ReverseSorted
      };
 
 
@@ -71,15 +71,12 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         public static int Size1000000 = 1000000;
 
         // Creates an iterator to load the next result for the given Array filename
-        public static IEnumerable<string> GetNextResult(string filename)
+        public static IEnumerable<string> GetNextResult(string file)
         {
-            string line;
-            using (StreamReader reader = new StreamReader(filename))
+            string[] lines = file.Split(new string[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var line in lines)
             {
-                while ((line = reader.ReadLine()) != null)
-                {
-                    yield return line;
-                }
+                yield return line;
             }
         }
 

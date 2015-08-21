@@ -61,282 +61,303 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.1,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:4,&quot;shellSortExecutionTime&quot;:33,&quot;heapSortExecutionTime&quot;:19,&quot;mergeSortExecutionTime&quot;:10,&quot;quickSortExecutionTime&quot;:9,&quot;parallelMergeSortExecutionTime&quot;:12}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.1,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:4,&quot;shellSortExecutionTime&quot;:41,&quot;heapSortExecutionTime&quot;:18,&quot;mergeSortExecutionTime&quot;:10,&quot;quickSortExecutionTime&quot;:10,&quot;parallelMergeSortExecutionTime&quot;:10}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.1,&quot;arra [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _100_AlmostSorted_1 {
+        internal static string _100_AlmostSorted_1 {
             get {
-                object obj = ResourceManager.GetObject("_100_AlmostSorted_1", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_100_AlmostSorted_1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.06,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:3,&quot;shellSortExecutionTime&quot;:3,&quot;heapSortExecutionTime&quot;:8,&quot;mergeSortExecutionTime&quot;:7,&quot;quickSortExecutionTime&quot;:5,&quot;parallelMergeSortExecutionTime&quot;:4}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.05,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:3,&quot;shellSortExecutionTime&quot;:4,&quot;heapSortExecutionTime&quot;:10,&quot;mergeSortExecutionTime&quot;:9,&quot;quickSortExecutionTime&quot;:6,&quot;parallelMergeSortExecutionTime&quot;:5}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.05,&quot;arraytype [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _100_AlmostSorted_2 {
+        internal static string _100_AlmostSorted_2 {
             get {
-                object obj = ResourceManager.GetObject("_100_AlmostSorted_2", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_100_AlmostSorted_2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.04,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:2,&quot;shellSortExecutionTime&quot;:3,&quot;heapSortExecutionTime&quot;:11,&quot;mergeSortExecutionTime&quot;:8,&quot;quickSortExecutionTime&quot;:5,&quot;parallelMergeSortExecutionTime&quot;:4}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.04,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:3,&quot;shellSortExecutionTime&quot;:3,&quot;heapSortExecutionTime&quot;:11,&quot;mergeSortExecutionTime&quot;:8,&quot;quickSortExecutionTime&quot;:6,&quot;parallelMergeSortExecutionTime&quot;:5}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.04,&quot;arrayt [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _100_AlmostSorted_3 {
+        internal static string _100_AlmostSorted_3 {
             get {
-                object obj = ResourceManager.GetObject("_100_AlmostSorted_3", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_100_AlmostSorted_3", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.03,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:2,&quot;shellSortExecutionTime&quot;:3,&quot;heapSortExecutionTime&quot;:8,&quot;mergeSortExecutionTime&quot;:6,&quot;quickSortExecutionTime&quot;:3,&quot;parallelMergeSortExecutionTime&quot;:4}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.03,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:2,&quot;shellSortExecutionTime&quot;:3,&quot;heapSortExecutionTime&quot;:10,&quot;mergeSortExecutionTime&quot;:8,&quot;quickSortExecutionTime&quot;:5,&quot;parallelMergeSortExecutionTime&quot;:4}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.03,&quot;arraytype [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _100_AlmostSorted_4 {
+        internal static string _100_AlmostSorted_4 {
             get {
-                object obj = ResourceManager.GetObject("_100_AlmostSorted_4", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_100_AlmostSorted_4", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.02,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:4,&quot;shellSortExecutionTime&quot;:4,&quot;heapSortExecutionTime&quot;:14,&quot;mergeSortExecutionTime&quot;:20,&quot;quickSortExecutionTime&quot;:17,&quot;parallelMergeSortExecutionTime&quot;:14}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.02,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:2,&quot;shellSortExecutionTime&quot;:2,&quot;heapSortExecutionTime&quot;:10,&quot;mergeSortExecutionTime&quot;:7,&quot;quickSortExecutionTime&quot;:6,&quot;parallelMergeSortExecutionTime&quot;:5}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.02,&quot;array [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _100_AlmostSorted_5 {
+        internal static string _100_AlmostSorted_5 {
             get {
-                object obj = ResourceManager.GetObject("_100_AlmostSorted_5", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_100_AlmostSorted_5", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.5,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:79,&quot;shellSortExecutionTime&quot;:32,&quot;heapSortExecutionTime&quot;:111,&quot;mergeSortExecutionTime&quot;:73,&quot;quickSortExecutionTime&quot;:339,&quot;parallelMergeSortExecutionTime&quot;:44}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.47,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:71,&quot;shellSortExecutionTime&quot;:29,&quot;heapSortExecutionTime&quot;:34,&quot;mergeSortExecutionTime&quot;:71,&quot;quickSortExecutionTime&quot;:31,&quot;parallelMergeSortExecutionTime&quot;:36}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.48,&quot;arraytype&quot;:&quot;Random&quot; [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _100_Random {
+        internal static string _100_Random {
             get {
-                object obj = ResourceManager.GetObject("_100_Random", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_100_Random", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:11,&quot;shellSortExecutionTime&quot;:4,&quot;heapSortExecutionTime&quot;:15,&quot;mergeSortExecutionTime&quot;:15,&quot;quickSortExecutionTime&quot;:17,&quot;parallelMergeSortExecutionTime&quot;:15}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:6,&quot;shellSortExecutionTime&quot;:2,&quot;heapSortExecutionTime&quot;:9,&quot;mergeSortExecutionTime&quot;:7,&quot;quickSortExecutionTime&quot;:4,&quot;parallelMergeSortExecutionTime&quot;:3}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Re [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _100_ReverseSorted {
+        internal static string _100_ReverseSorted {
             get {
-                object obj = ResourceManager.GetObject("_100_ReverseSorted", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_100_ReverseSorted", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000,&quot;runs&quot;:0.011,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:123,&quot;shellSortExecutionTime&quot;:39,&quot;heapSortExecutionTime&quot;:82,&quot;mergeSortExecutionTime&quot;:41,&quot;quickSortExecutionTime&quot;:39,&quot;parallelMergeSortExecutionTime&quot;:36}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:0.012,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:130,&quot;shellSortExecutionTime&quot;:38,&quot;heapSortExecutionTime&quot;:88,&quot;mergeSortExecutionTime&quot;:40,&quot;quickSortExecutionTime&quot;:39,&quot;parallelMergeSortExecutionTime&quot;:35}
+        ///{&quot;arraySize&quot;:1000,&quot;run [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000_AlmostSorted_1 {
+        internal static string _1000_AlmostSorted_1 {
             get {
-                object obj = ResourceManager.GetObject("_1000_AlmostSorted_1", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000_AlmostSorted_1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000,&quot;runs&quot;:0.011,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:107,&quot;shellSortExecutionTime&quot;:30,&quot;heapSortExecutionTime&quot;:77,&quot;mergeSortExecutionTime&quot;:39,&quot;quickSortExecutionTime&quot;:33,&quot;parallelMergeSortExecutionTime&quot;:25}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:0.007,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:191,&quot;shellSortExecutionTime&quot;:31,&quot;heapSortExecutionTime&quot;:79,&quot;mergeSortExecutionTime&quot;:48,&quot;quickSortExecutionTime&quot;:36,&quot;parallelMergeSortExecutionTime&quot;:26}
+        ///{&quot;arraySize&quot;:1000,&quot;run [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000_AlmostSorted_2 {
+        internal static string _1000_AlmostSorted_2 {
             get {
-                object obj = ResourceManager.GetObject("_1000_AlmostSorted_2", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000_AlmostSorted_2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000,&quot;runs&quot;:0.013,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:96,&quot;shellSortExecutionTime&quot;:30,&quot;heapSortExecutionTime&quot;:95,&quot;mergeSortExecutionTime&quot;:33,&quot;quickSortExecutionTime&quot;:33,&quot;parallelMergeSortExecutionTime&quot;:19}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:0.007,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:135,&quot;shellSortExecutionTime&quot;:41,&quot;heapSortExecutionTime&quot;:98,&quot;mergeSortExecutionTime&quot;:43,&quot;quickSortExecutionTime&quot;:50,&quot;parallelMergeSortExecutionTime&quot;:39}
+        ///{&quot;arraySize&quot;:1000,&quot;ru [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000_AlmostSorted_3 {
+        internal static string _1000_AlmostSorted_3 {
             get {
-                object obj = ResourceManager.GetObject("_1000_AlmostSorted_3", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000_AlmostSorted_3", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000,&quot;runs&quot;:0.01,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:140,&quot;shellSortExecutionTime&quot;:59,&quot;heapSortExecutionTime&quot;:99,&quot;mergeSortExecutionTime&quot;:43,&quot;quickSortExecutionTime&quot;:42,&quot;parallelMergeSortExecutionTime&quot;:22}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:0.009,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:88,&quot;shellSortExecutionTime&quot;:24,&quot;heapSortExecutionTime&quot;:73,&quot;mergeSortExecutionTime&quot;:30,&quot;quickSortExecutionTime&quot;:32,&quot;parallelMergeSortExecutionTime&quot;:17}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot; [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000_AlmostSorted_4 {
+        internal static string _1000_AlmostSorted_4 {
             get {
-                object obj = ResourceManager.GetObject("_1000_AlmostSorted_4", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000_AlmostSorted_4", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000,&quot;runs&quot;:0.01,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:65,&quot;shellSortExecutionTime&quot;:16,&quot;heapSortExecutionTime&quot;:73,&quot;mergeSortExecutionTime&quot;:27,&quot;quickSortExecutionTime&quot;:45,&quot;parallelMergeSortExecutionTime&quot;:11}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:0.008,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:73,&quot;shellSortExecutionTime&quot;:17,&quot;heapSortExecutionTime&quot;:78,&quot;mergeSortExecutionTime&quot;:27,&quot;quickSortExecutionTime&quot;:48,&quot;parallelMergeSortExecutionTime&quot;:12}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000_AlmostSorted_5 {
+        internal static string _1000_AlmostSorted_5 {
             get {
-                object obj = ResourceManager.GetObject("_1000_AlmostSorted_5", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000_AlmostSorted_5", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000,&quot;runs&quot;:0.487,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:158,&quot;shellSortExecutionTime&quot;:69,&quot;heapSortExecutionTime&quot;:97,&quot;mergeSortExecutionTime&quot;:69,&quot;quickSortExecutionTime&quot;:52,&quot;parallelMergeSortExecutionTime&quot;:45}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:0.486,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:150,&quot;shellSortExecutionTime&quot;:61,&quot;heapSortExecutionTime&quot;:88,&quot;mergeSortExecutionTime&quot;:69,&quot;quickSortExecutionTime&quot;:49,&quot;parallelMergeSortExecutionTime&quot;:41}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:0.497,&quot;arraytype&quot;:&quot; [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000_Random {
+        internal static string _1000_Random {
             get {
-                object obj = ResourceManager.GetObject("_1000_Random", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000_Random", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:276,&quot;shellSortExecutionTime&quot;:13,&quot;heapSortExecutionTime&quot;:69,&quot;mergeSortExecutionTime&quot;:31,&quot;quickSortExecutionTime&quot;:8,&quot;parallelMergeSortExecutionTime&quot;:2}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:264,&quot;shellSortExecutionTime&quot;:12,&quot;heapSortExecutionTime&quot;:71,&quot;mergeSortExecutionTime&quot;:40,&quot;quickSortExecutionTime&quot;:8,&quot;parallelMergeSortExecutionTime&quot;:2}
+        ///{&quot;arraySize&quot;:1000,&quot;runs&quot;:1.0,&quot;arrayt [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000_ReverseSorted {
+        internal static string _1000_ReverseSorted {
             get {
-                object obj = ResourceManager.GetObject("_1000_ReverseSorted", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000_ReverseSorted", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0163,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:13342,&quot;shellSortExecutionTime&quot;:410,&quot;heapSortExecutionTime&quot;:970,&quot;mergeSortExecutionTime&quot;:363,&quot;quickSortExecutionTime&quot;:449,&quot;parallelMergeSortExecutionTime&quot;:260}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.016,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:13805,&quot;shellSortExecutionTime&quot;:402,&quot;heapSortExecutionTime&quot;:934,&quot;mergeSortExecutionTime&quot;:369,&quot;quickSortExecutionTime&quot;:441,&quot;parallelMergeSortExecutionTime&quot;:233}
+        ///{&quot;arr [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _10000_AlmostSorted_1 {
+        internal static string _10000_AlmostSorted_1 {
             get {
-                object obj = ResourceManager.GetObject("_10000_AlmostSorted_1", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_10000_AlmostSorted_1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0292,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:10958,&quot;shellSortExecutionTime&quot;:346,&quot;heapSortExecutionTime&quot;:1088,&quot;mergeSortExecutionTime&quot;:331,&quot;quickSortExecutionTime&quot;:372,&quot;parallelMergeSortExecutionTime&quot;:310}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0313,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:13424,&quot;shellSortExecutionTime&quot;:469,&quot;heapSortExecutionTime&quot;:1072,&quot;mergeSortExecutionTime&quot;:318,&quot;quickSortExecutionTime&quot;:369,&quot;parallelMergeSortExecutionTime&quot;:199}
+        ///{&quot; [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _10000_AlmostSorted_2 {
+        internal static string _10000_AlmostSorted_2 {
             get {
-                object obj = ResourceManager.GetObject("_10000_AlmostSorted_2", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_10000_AlmostSorted_2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0476,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:10388,&quot;shellSortExecutionTime&quot;:295,&quot;heapSortExecutionTime&quot;:927,&quot;mergeSortExecutionTime&quot;:285,&quot;quickSortExecutionTime&quot;:572,&quot;parallelMergeSortExecutionTime&quot;:174}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0455,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:8845,&quot;shellSortExecutionTime&quot;:300,&quot;heapSortExecutionTime&quot;:1163,&quot;mergeSortExecutionTime&quot;:502,&quot;quickSortExecutionTime&quot;:648,&quot;parallelMergeSortExecutionTime&quot;:309}
+        ///{&quot; [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _10000_AlmostSorted_3 {
+        internal static string _10000_AlmostSorted_3 {
             get {
-                object obj = ResourceManager.GetObject("_10000_AlmostSorted_3", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_10000_AlmostSorted_3", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0502,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:14217,&quot;shellSortExecutionTime&quot;:244,&quot;heapSortExecutionTime&quot;:899,&quot;mergeSortExecutionTime&quot;:274,&quot;quickSortExecutionTime&quot;:369,&quot;parallelMergeSortExecutionTime&quot;:158}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0543,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:16421,&quot;shellSortExecutionTime&quot;:330,&quot;heapSortExecutionTime&quot;:1454,&quot;mergeSortExecutionTime&quot;:856,&quot;quickSortExecutionTime&quot;:354,&quot;parallelMergeSortExecutionTime&quot;:146}
+        ///{&quot;a [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _10000_AlmostSorted_4 {
+        internal static string _10000_AlmostSorted_4 {
             get {
-                object obj = ResourceManager.GetObject("_10000_AlmostSorted_4", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_10000_AlmostSorted_4", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0695,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:9312,&quot;shellSortExecutionTime&quot;:179,&quot;heapSortExecutionTime&quot;:896,&quot;mergeSortExecutionTime&quot;:246,&quot;quickSortExecutionTime&quot;:1661,&quot;parallelMergeSortExecutionTime&quot;:314}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.0707,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:8196,&quot;shellSortExecutionTime&quot;:176,&quot;heapSortExecutionTime&quot;:925,&quot;mergeSortExecutionTime&quot;:250,&quot;quickSortExecutionTime&quot;:1944,&quot;parallelMergeSortExecutionTime&quot;:364}
+        ///{&quot;ar [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _10000_AlmostSorted_5 {
+        internal static string _10000_AlmostSorted_5 {
             get {
-                object obj = ResourceManager.GetObject("_10000_AlmostSorted_5", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_10000_AlmostSorted_5", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.5005,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:16458,&quot;shellSortExecutionTime&quot;:867,&quot;heapSortExecutionTime&quot;:1140,&quot;mergeSortExecutionTime&quot;:876,&quot;quickSortExecutionTime&quot;:683,&quot;parallelMergeSortExecutionTime&quot;:111657}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.5017,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:14583,&quot;shellSortExecutionTime&quot;:861,&quot;heapSortExecutionTime&quot;:1128,&quot;mergeSortExecutionTime&quot;:832,&quot;quickSortExecutionTime&quot;:670,&quot;parallelMergeSortExecutionTime&quot;:938}
+        ///{&quot;arraySize&quot;:10000,&quot;r [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _10000_Random {
+        internal static string _10000_Random {
             get {
-                object obj = ResourceManager.GetObject("_10000_Random", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_10000_Random", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:29045,&quot;shellSortExecutionTime&quot;:148,&quot;heapSortExecutionTime&quot;:862,&quot;mergeSortExecutionTime&quot;:319,&quot;quickSortExecutionTime&quot;:182,&quot;parallelMergeSortExecutionTime&quot;:69}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:28007,&quot;shellSortExecutionTime&quot;:227,&quot;heapSortExecutionTime&quot;:1073,&quot;mergeSortExecutionTime&quot;:371,&quot;quickSortExecutionTime&quot;:122,&quot;parallelMergeSortExecutionTime&quot;:54}
+        ///{&quot;arraySize&quot;:1000 [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _10000_ReverseSorted {
+        internal static string _10000_ReverseSorted {
             get {
-                object obj = ResourceManager.GetObject("_10000_ReverseSorted", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_10000_ReverseSorted", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.687794,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:130088727,&quot;shellSortExecutionTime&quot;:53633,&quot;heapSortExecutionTime&quot;:213440,&quot;mergeSortExecutionTime&quot;:50569,&quot;quickSortExecutionTime&quot;:51094,&quot;parallelMergeSortExecutionTime&quot;:18557}
+        ///{&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.687867,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:117919246,&quot;shellSortExecutionTime&quot;:36898,&quot;heapSortExecutionTime&quot;:164329,&quot;mergeSortExecutionTime&quot;:38703,&quot;quickSortExecutionTime&quot;:36651,&quot;parall [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000000_AlmostSorted_1 {
+        internal static string _1000000_AlmostSorted_1 {
             get {
-                object obj = ResourceManager.GetObject("_1000000_AlmostSorted_1", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000000_AlmostSorted_1", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.836524,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:95343951,&quot;shellSortExecutionTime&quot;:29640,&quot;heapSortExecutionTime&quot;:153293,&quot;mergeSortExecutionTime&quot;:33244,&quot;quickSortExecutionTime&quot;:29802,&quot;parallelMergeSortExecutionTime&quot;:17317}
+        ///{&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.836518,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:97965049,&quot;shellSortExecutionTime&quot;:30426,&quot;heapSortExecutionTime&quot;:157937,&quot;mergeSortExecutionTime&quot;:33211,&quot;quickSortExecutionTime&quot;:29577,&quot;parallel [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000000_AlmostSorted_2 {
+        internal static string _1000000_AlmostSorted_2 {
             get {
-                object obj = ResourceManager.GetObject("_1000000_AlmostSorted_2", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000000_AlmostSorted_2", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.893109,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:86144222,&quot;shellSortExecutionTime&quot;:32410,&quot;heapSortExecutionTime&quot;:175764,&quot;mergeSortExecutionTime&quot;:35497,&quot;quickSortExecutionTime&quot;:32255,&quot;parallelMergeSortExecutionTime&quot;:12626}
+        ///{&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.893049,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:91860981,&quot;shellSortExecutionTime&quot;:26337,&quot;heapSortExecutionTime&quot;:148732,&quot;mergeSortExecutionTime&quot;:31673,&quot;quickSortExecutionTime&quot;:27808,&quot;parall [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000000_AlmostSorted_3 {
+        internal static string _1000000_AlmostSorted_3 {
             get {
-                object obj = ResourceManager.GetObject("_1000000_AlmostSorted_3", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000000_AlmostSorted_3", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.901782,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:87391076,&quot;shellSortExecutionTime&quot;:26784,&quot;heapSortExecutionTime&quot;:197013,&quot;mergeSortExecutionTime&quot;:32553,&quot;quickSortExecutionTime&quot;:40808,&quot;parallelMergeSortExecutionTime&quot;:7996}
+        ///{&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.901778,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:93423163,&quot;shellSortExecutionTime&quot;:28652,&quot;heapSortExecutionTime&quot;:145981,&quot;mergeSortExecutionTime&quot;:31975,&quot;quickSortExecutionTime&quot;:28244,&quot;parallelM [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000000_AlmostSorted_4 {
+        internal static string _1000000_AlmostSorted_4 {
             get {
-                object obj = ResourceManager.GetObject("_1000000_AlmostSorted_4", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000000_AlmostSorted_4", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.934468,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:74187361,&quot;shellSortExecutionTime&quot;:25415,&quot;heapSortExecutionTime&quot;:174665,&quot;mergeSortExecutionTime&quot;:30388,&quot;quickSortExecutionTime&quot;:1006382,&quot;parallelMergeSortExecutionTime&quot;:7634}
+        ///{&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.934468,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:66594549,&quot;shellSortExecutionTime&quot;:20470,&quot;heapSortExecutionTime&quot;:167337,&quot;mergeSortExecutionTime&quot;:37133,&quot;quickSortExecutionTime&quot;:441736,&quot;parall [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000000_AlmostSorted_5 {
+        internal static string _1000000_AlmostSorted_5 {
             get {
-                object obj = ResourceManager.GetObject("_1000000_AlmostSorted_5", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000000_AlmostSorted_5", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.500206,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:542304231,&quot;shellSortExecutionTime&quot;:182825,&quot;heapSortExecutionTime&quot;:320724,&quot;mergeSortExecutionTime&quot;:153921,&quot;quickSortExecutionTime&quot;:158820,&quot;parallelMergeSortExecutionTime&quot;:231468}
+        ///{&quot;arraySize&quot;:1000000,&quot;runs&quot;:0.499853,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:369720095,&quot;shellSortExecutionTime&quot;:165815,&quot;heapSortExecutionTime&quot;:335163,&quot;mergeSortExecutionTime&quot;:163739,&quot;quickSortExecutionTime&quot;:119670,&quot;parallelMergeSortExec [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000000_Random {
+        internal static string _1000000_Random {
             get {
-                object obj = ResourceManager.GetObject("_1000000_Random", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000000_Random", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:1000000,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:280334766,&quot;shellSortExecutionTime&quot;:20902,&quot;heapSortExecutionTime&quot;:121017,&quot;mergeSortExecutionTime&quot;:43537,&quot;quickSortExecutionTime&quot;:19429,&quot;parallelMergeSortExecutionTime&quot;:8330}
+        ///{&quot;arraySize&quot;:1000000,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:282419359,&quot;shellSortExecutionTime&quot;:19083,&quot;heapSortExecutionTime&quot;:124050,&quot;mergeSortExecutionTime&quot;:39056,&quot;quickSortExecutionTime&quot;:14211,&quot;parallelMergeSortExecut [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static byte[] _1000000_ReverseSorted {
+        internal static string _1000000_ReverseSorted {
             get {
-                object obj = ResourceManager.GetObject("_1000000_ReverseSorted", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetString("_1000000_ReverseSorted", resourceCulture);
             }
         }
     }

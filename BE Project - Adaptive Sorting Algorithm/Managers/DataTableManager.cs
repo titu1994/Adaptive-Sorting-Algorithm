@@ -29,8 +29,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         // Labels for the DataTable
         private string[] inputColumns =
         {
-            "Array Size", "Runs", "Array Type", "Insertion Sort", "Shell Sort",
-            "Heap Sort", "Merge Sort", "Quick Sort", "Parallel Merge Sort"
+            "Array Size", "Runs", "Insertion Sort (\u03BCs)", "Shell Sort (\u03BCs)",
+            "Heap Sort (\u03BCs)", "Merge Sort (\u03BCs)", "Quick Sort (\u03BCs)", "Parallel Merge Sort (\u03BCs)"
         };
         private string outputColumn = "Selected Sorting Algorithm";
 
@@ -49,7 +49,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         {
             object[] sr =
             {
-                r.arraySize + "", r.runs + "", r.arraytype, r.insertionSortExecutionTime + "",
+                r.arraySize + "", r.runs + "", r.insertionSortExecutionTime + "",
                 r.shellSortExecutionTime + "", r.heapSortExecutionTime + "", r.mergeSortExecutionTime + "",
                 r.quickSortExecutionTime + "", r.parallelMergeSortExecutionTime + "", r.bestClass
             };
@@ -86,6 +86,28 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             int result = tree.Compute(input);
             string bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
             return bestAlgorithm;
+        }
+
+        public void LoadAllResults()
+        {
+            string line;
+            string filename;
+            string[][] arrays = {JsonManager.array100, JsonManager.array1000, JsonManager.array10000, JsonManager.array1000000};
+            JsonManager.Result result;
+
+            for (int i = 0; i < arrays.Length; i++)
+            {
+                for (int j = 0; j < arrays[i].Length; j++)
+                {
+                    filename = arrays[i][j];
+
+                    foreach(string json in JsonManager.GetNextResult(filename))
+                    {
+                        result = JsonManager.ParseResult(json);
+                        AddResult(result);
+                    }
+                }
+            }
         }
 
     }
