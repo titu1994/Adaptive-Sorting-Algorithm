@@ -43,6 +43,16 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         Resources._10000_ReverseSorted
     };
 
+        public static string[] array100000 = {
+        Resources._100000_Random,
+        Resources._100000_AlmostSorted_1,
+        Resources._100000_AlmostSorted_2,
+        Resources._100000_AlmostSorted_3,
+        Resources._100000_AlmostSorted_4,
+        Resources._100000_AlmostSorted_5,
+        Resources._100000_ReverseSorted
+    };
+
         // File names for Array of size 1000000 
         public static string[] array1000000 = {
         Resources._1000000_Random,
@@ -68,6 +78,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         public static int Size100 = 100;
         public static int Size1000 = 1000;
         public static int Size10000 = 10000;
+        public static int Size100000 = 100000;
         public static int Size1000000 = 1000000;
 
         // Creates an iterator to load the next result for the given Array filename
@@ -117,14 +128,14 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                     break;
                 case 4: r.bestClass = "Quick Sort";
                     break;
-                case 5: r.bestClass = "Parallel Quick Sort";
+                case 5: r.bestClass = "Parallel Merge Sort";
                     break;
             }
 
             return r;
         }
 
-        // Helper method to obtain filename of Random array of some size
+        /*// Helper method to obtain filename of Random array of some size
         public static string getRandomArrayOfSize(int size)
         {
             switch (size)
@@ -225,7 +236,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                     return array1000000[TypeAlmostSorted1];
             }
             return array100[TypeAlmostSorted1];
-        }
+        }*/
 
         // Wrapper class to parse the JSON string into an object
         public class BaseResult

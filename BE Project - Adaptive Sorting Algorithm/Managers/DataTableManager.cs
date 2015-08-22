@@ -97,7 +97,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         {
             string line;
             string filename;
-            string[][] arrays = {JsonManager.array100, JsonManager.array1000, JsonManager.array10000, JsonManager.array1000000};
+            string[][] arrays = {JsonManager.array100, JsonManager.array1000, JsonManager.array10000, JsonManager.array100000, JsonManager.array1000000};
             JsonManager.Result result;
 
             for (int i = 0; i < arrays.Length; i++)

@@ -34,6 +34,8 @@
             this.ErrorLabelValue = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DataSetSizeValue = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.AccuractyLabelValue = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ArrayGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,12 +99,31 @@
             this.DataSetSizeValue.TabIndex = 5;
             this.DataSetSizeValue.Text = "...";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(468, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Accuracy";
+            // 
+            // AccuractyLabelValue
+            // 
+            this.AccuractyLabelValue.AutoSize = true;
+            this.AccuractyLabelValue.Location = new System.Drawing.Point(527, 9);
+            this.AccuractyLabelValue.Name = "AccuractyLabelValue";
+            this.AccuractyLabelValue.Size = new System.Drawing.Size(0, 13);
+            this.AccuractyLabelValue.TabIndex = 7;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.AccuractyLabelValue);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.DataSetSizeValue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ErrorLabelValue);
@@ -126,6 +147,8 @@
         private System.Windows.Forms.Label ErrorLabelValue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label DataSetSizeValue;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label AccuractyLabelValue;
     }
 }
 

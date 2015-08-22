@@ -31,6 +31,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             double error = manager.Learn();
 
             ErrorLabelValue.Text = Math.Round(error * 100, 4) + " %";
+            AccuractyLabelValue.Text = (100 - (Math.Round(error*100, 4))) + " %";
             DataSetSizeValue.Text = manager.Table.Rows.Count + "";
 
             string[] data = new string[2];
@@ -49,10 +50,6 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                 {
                     ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.OrangeRed;
                     ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].ToolTipText = "Calculated : " + bestAlgo;
-
-                    /*Console.WriteLine("Error at {0} : Best = {1} | Given Best = {2}",
-                        i+"", ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].Value, bestAlgo);
-                        */
                 }
             }
         }
