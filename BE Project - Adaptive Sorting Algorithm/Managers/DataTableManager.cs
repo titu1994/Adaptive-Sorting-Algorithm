@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using Accord.MachineLearning.DecisionTrees;
@@ -29,7 +32,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         // Labels for the DataTable
         private string[] inputColumns =
         {
-            "Array Size", "Runs", "Insertion Sort (\u03BCs)", "Shell Sort (\u03BCs)",
+            "Array Size", "Runs", "Array Type", "Insertion Sort (\u03BCs)", "Shell Sort (\u03BCs)",
             "Heap Sort (\u03BCs)", "Merge Sort (\u03BCs)", "Quick Sort (\u03BCs)", "Parallel Merge Sort (\u03BCs)"
         };
         private string outputColumn = "Selected Sorting Algorithm";
@@ -49,7 +52,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         {
             object[] sr =
             {
-                r.arraySize + "", r.runs + "", r.insertionSortExecutionTime + "",
+                r.arraySize + "", r.runs + "", r.arraytype, r.insertionSortExecutionTime + "",
                 r.shellSortExecutionTime + "", r.heapSortExecutionTime + "", r.mergeSortExecutionTime + "",
                 r.quickSortExecutionTime + "", r.parallelMergeSortExecutionTime + "", r.bestClass
             };
@@ -72,7 +75,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         // Loads up the Decision Tree
         public void CreateDecisionTree()
         {
-            string[] cols = { "Array Size" , "Runs" };
+            string[] cols = { "Array Size", "Runs" };
             var attributes = DecisionVariable.FromCodebook(codebook, cols);
             tree = new DecisionTree(attributes, 6);
         }
@@ -84,20 +87,56 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             return c45.Run(Inputs, Outputs);
         }
 
+        
         // Actual Selection using Decision Tree
-        public string GetBestAlgorithmForInput(string[] input)
+        public string GetBestAlgorithmForInput(string[] input, bool returnNonTranslatedInt)
         {
-            double[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
-            int result = tree.Compute(codes);
-            string bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
-            return bestAlgorithm;
+            try
+            {
+                double[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
+                int result = tree.Compute(codes);
+                string bestAlgorithm;
+                if (returnNonTranslatedInt)
+                {
+                    bestAlgorithm = result + "";
+                }
+                else
+                {
+                    bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
+                }
+                
+                return bestAlgorithm;
+            }
+            catch (Exception ex)
+            {
+                return "Could not match inputs";
+            }
         }
+
+        public void SaveTreeFunction()
+        {
+            var da = AppDomain.CurrentDomain.DefineDynamicAssembly(
+                new AssemblyName("dyn"), // call it whatever you want
+                AssemblyBuilderAccess.Save);
+
+            var dm = da.DefineDynamicModule("dyn_mod", "dyn.dll");
+            var dt = dm.DefineType("dyn_type");
+            var method = dt.DefineMethod(
+                            "Foo",
+                             MethodAttributes.Public | MethodAttributes.Static);
+
+            tree.ToExpression().CompileToMethod(method);
+            dt.CreateType();
+
+            da.Save("dyn.dll");
+        }
+
 
         public void LoadAllResults()
         {
             string line;
             string filename;
-            string[][] arrays = {JsonManager.array100, JsonManager.array1000, JsonManager.array10000, JsonManager.array100000, JsonManager.array1000000};
+            string[][] arrays = { JsonManager.array100, JsonManager.array1000, JsonManager.array10000, JsonManager.array100000, JsonManager.array1000000 };
             JsonManager.Result result;
 
             for (int i = 0; i < arrays.Length; i++)
@@ -106,7 +145,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 {
                     filename = arrays[i][j];
 
-                    foreach(string json in JsonManager.GetNextResult(filename))
+                    foreach (string json in JsonManager.GetNextResult(filename))
                     {
                         result = JsonManager.ParseResult(json);
                         AddResult(result);

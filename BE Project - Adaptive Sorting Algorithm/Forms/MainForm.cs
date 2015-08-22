@@ -19,10 +19,14 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
         {
             InitializeComponent();
             manager = new DataTableManager();
+
+
         }
 
         private void loadArrayButton_Click(object sender, EventArgs e)
         {
+            if(manager.Table.Rows.Count > 0) 
+                manager.Table.Clear();
             manager.LoadAllResults();
             ArrayGridView.DataSource = manager.Table;
 
@@ -41,7 +45,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                 data[0] = (string) ArrayGridView.Rows[i].Cells[0].Value;
                 data[1] = (string) ArrayGridView.Rows[i].Cells[1].Value;
 
-                bestAlgo = manager.GetBestAlgorithmForInput(data);
+                bestAlgo = manager.GetBestAlgorithmForInput(data, false);
                 if (bestAlgo.Equals(ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].Value))
                 {
                     ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.ForestGreen;
@@ -52,6 +56,21 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                     ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].ToolTipText = "Calculated : " + bestAlgo;
                 }
             }
+
+            //manager.SaveTreeFunction();
+        }
+
+        private void TestCalculateButton_Click(object sender, EventArgs e)
+        {
+            string[] data = {TestArraySizeTextBox.Text, TestRunsFactorTextBox.Text};
+            string bestAlgo = manager.GetBestAlgorithmForInput(data, false);
+
+            if (string.IsNullOrEmpty(bestAlgo))
+            {
+                Console.WriteLine("Data {0}, {1} has empty output : {2}", data[0], data[1], manager.GetBestAlgorithmForInput(data, true));
+            }
+
+            TestBestArrayValue.Text = bestAlgo;
         }
     }
 }
