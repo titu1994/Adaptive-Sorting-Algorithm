@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.DataSetSizeValue = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.AccuractyLabelValue = new System.Windows.Forms.Label();
+            this.AccuracyLabelValue = new System.Windows.Forms.Label();
             this.TabController = new System.Windows.Forms.TabControl();
             this.TrainingTab = new System.Windows.Forms.TabPage();
             this.TestingPage = new System.Windows.Forms.TabPage();
@@ -46,10 +46,32 @@
             this.label4 = new System.Windows.Forms.Label();
             this.TestArraySizeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.MCSVMTab = new System.Windows.Forms.TabPage();
+            this.LoadMCSVMArray = new System.Windows.Forms.Button();
+            this.MCSVMGridView = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AccuracyMCSVMValue = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.ErrorMCSVMValue = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.DataSetMCSVMValue = new System.Windows.Forms.Label();
+            this.NaiveBayes = new System.Windows.Forms.TabPage();
+            this.LoadNaiveBayesArray = new System.Windows.Forms.Button();
+            this.NaiveBayesGridView = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.AccuracyNaiveBayesValue = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ErrorNaiveBayesValue = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.DataSetSizeNaiveBayes = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ArrayGridView)).BeginInit();
             this.TabController.SuspendLayout();
             this.TrainingTab.SuspendLayout();
             this.TestingPage.SuspendLayout();
+            this.MCSVMTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MCSVMGridView)).BeginInit();
+            this.NaiveBayes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NaiveBayesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // ArrayGridView
@@ -121,17 +143,19 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Accuracy";
             // 
-            // AccuractyLabelValue
+            // AccuracyLabelValue
             // 
-            this.AccuractyLabelValue.AutoSize = true;
-            this.AccuractyLabelValue.Location = new System.Drawing.Point(474, 6);
-            this.AccuractyLabelValue.Name = "AccuractyLabelValue";
-            this.AccuractyLabelValue.Size = new System.Drawing.Size(0, 13);
-            this.AccuractyLabelValue.TabIndex = 7;
+            this.AccuracyLabelValue.AutoSize = true;
+            this.AccuracyLabelValue.Location = new System.Drawing.Point(474, 6);
+            this.AccuracyLabelValue.Name = "AccuracyLabelValue";
+            this.AccuracyLabelValue.Size = new System.Drawing.Size(0, 13);
+            this.AccuracyLabelValue.TabIndex = 7;
             // 
             // TabController
             // 
             this.TabController.Controls.Add(this.TrainingTab);
+            this.TabController.Controls.Add(this.NaiveBayes);
+            this.TabController.Controls.Add(this.MCSVMTab);
             this.TabController.Controls.Add(this.TestingPage);
             this.TabController.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabController.Location = new System.Drawing.Point(0, 0);
@@ -144,7 +168,7 @@
             // 
             this.TrainingTab.BackColor = System.Drawing.Color.White;
             this.TrainingTab.Controls.Add(this.ArrayGridView);
-            this.TrainingTab.Controls.Add(this.AccuractyLabelValue);
+            this.TrainingTab.Controls.Add(this.AccuracyLabelValue);
             this.TrainingTab.Controls.Add(this.loadArrayButton);
             this.TrainingTab.Controls.Add(this.label2);
             this.TrainingTab.Controls.Add(this.DataSetSizeValue);
@@ -241,6 +265,186 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Array Size";
             // 
+            // MCSVMTab
+            // 
+            this.MCSVMTab.Controls.Add(this.DataSetMCSVMValue);
+            this.MCSVMTab.Controls.Add(this.label8);
+            this.MCSVMTab.Controls.Add(this.ErrorMCSVMValue);
+            this.MCSVMTab.Controls.Add(this.label7);
+            this.MCSVMTab.Controls.Add(this.AccuracyMCSVMValue);
+            this.MCSVMTab.Controls.Add(this.label6);
+            this.MCSVMTab.Controls.Add(this.MCSVMGridView);
+            this.MCSVMTab.Controls.Add(this.LoadMCSVMArray);
+            this.MCSVMTab.Location = new System.Drawing.Point(4, 22);
+            this.MCSVMTab.Name = "MCSVMTab";
+            this.MCSVMTab.Size = new System.Drawing.Size(776, 535);
+            this.MCSVMTab.TabIndex = 2;
+            this.MCSVMTab.Text = "Train (MCSVM)";
+            this.MCSVMTab.UseVisualStyleBackColor = true;
+            // 
+            // LoadMCSVMArray
+            // 
+            this.LoadMCSVMArray.BackColor = System.Drawing.Color.White;
+            this.LoadMCSVMArray.Location = new System.Drawing.Point(9, 14);
+            this.LoadMCSVMArray.Name = "LoadMCSVMArray";
+            this.LoadMCSVMArray.Size = new System.Drawing.Size(108, 43);
+            this.LoadMCSVMArray.TabIndex = 0;
+            this.LoadMCSVMArray.Text = "Load Arrays";
+            this.LoadMCSVMArray.UseVisualStyleBackColor = false;
+            this.LoadMCSVMArray.Click += new System.EventHandler(this.LoadMCSVMArray_Click);
+            // 
+            // MCSVMGridView
+            // 
+            this.MCSVMGridView.AllowUserToAddRows = false;
+            this.MCSVMGridView.AllowUserToDeleteRows = false;
+            this.MCSVMGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MCSVMGridView.Location = new System.Drawing.Point(9, 64);
+            this.MCSVMGridView.Name = "MCSVMGridView";
+            this.MCSVMGridView.ReadOnly = true;
+            this.MCSVMGridView.Size = new System.Drawing.Size(745, 447);
+            this.MCSVMGridView.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(409, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Accuracy";
+            // 
+            // AccuracyMCSVMValue
+            // 
+            this.AccuracyMCSVMValue.AutoSize = true;
+            this.AccuracyMCSVMValue.Location = new System.Drawing.Point(468, 15);
+            this.AccuracyMCSVMValue.Name = "AccuracyMCSVMValue";
+            this.AccuracyMCSVMValue.Size = new System.Drawing.Size(0, 13);
+            this.AccuracyMCSVMValue.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(561, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Error";
+            // 
+            // ErrorMCSVMValue
+            // 
+            this.ErrorMCSVMValue.AutoSize = true;
+            this.ErrorMCSVMValue.Location = new System.Drawing.Point(608, 15);
+            this.ErrorMCSVMValue.Name = "ErrorMCSVMValue";
+            this.ErrorMCSVMValue.Size = new System.Drawing.Size(0, 13);
+            this.ErrorMCSVMValue.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(564, 44);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Data Set Size";
+            // 
+            // DataSetMCSVMValue
+            // 
+            this.DataSetMCSVMValue.AutoSize = true;
+            this.DataSetMCSVMValue.Location = new System.Drawing.Point(643, 44);
+            this.DataSetMCSVMValue.Name = "DataSetMCSVMValue";
+            this.DataSetMCSVMValue.Size = new System.Drawing.Size(0, 13);
+            this.DataSetMCSVMValue.TabIndex = 7;
+            // 
+            // NaiveBayes
+            // 
+            this.NaiveBayes.Controls.Add(this.DataSetSizeNaiveBayes);
+            this.NaiveBayes.Controls.Add(this.label11);
+            this.NaiveBayes.Controls.Add(this.ErrorNaiveBayesValue);
+            this.NaiveBayes.Controls.Add(this.label10);
+            this.NaiveBayes.Controls.Add(this.AccuracyNaiveBayesValue);
+            this.NaiveBayes.Controls.Add(this.label9);
+            this.NaiveBayes.Controls.Add(this.NaiveBayesGridView);
+            this.NaiveBayes.Controls.Add(this.LoadNaiveBayesArray);
+            this.NaiveBayes.Location = new System.Drawing.Point(4, 22);
+            this.NaiveBayes.Name = "NaiveBayes";
+            this.NaiveBayes.Size = new System.Drawing.Size(776, 535);
+            this.NaiveBayes.TabIndex = 3;
+            this.NaiveBayes.Text = "Train (Naive Bayes)";
+            this.NaiveBayes.UseVisualStyleBackColor = true;
+            // 
+            // LoadNaiveBayesArray
+            // 
+            this.LoadNaiveBayesArray.BackColor = System.Drawing.Color.White;
+            this.LoadNaiveBayesArray.Location = new System.Drawing.Point(8, 12);
+            this.LoadNaiveBayesArray.Name = "LoadNaiveBayesArray";
+            this.LoadNaiveBayesArray.Size = new System.Drawing.Size(105, 46);
+            this.LoadNaiveBayesArray.TabIndex = 0;
+            this.LoadNaiveBayesArray.Text = "Load Arrays";
+            this.LoadNaiveBayesArray.UseVisualStyleBackColor = false;
+            this.LoadNaiveBayesArray.Click += new System.EventHandler(this.LoadNaiveBayesArray_Click);
+            // 
+            // NaiveBayesGridView
+            // 
+            this.NaiveBayesGridView.AllowUserToAddRows = false;
+            this.NaiveBayesGridView.AllowUserToDeleteRows = false;
+            this.NaiveBayesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.NaiveBayesGridView.Location = new System.Drawing.Point(9, 78);
+            this.NaiveBayesGridView.Name = "NaiveBayesGridView";
+            this.NaiveBayesGridView.ReadOnly = true;
+            this.NaiveBayesGridView.Size = new System.Drawing.Size(759, 430);
+            this.NaiveBayesGridView.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(441, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(52, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Accuracy";
+            // 
+            // AccuracyNaiveBayesValue
+            // 
+            this.AccuracyNaiveBayesValue.AutoSize = true;
+            this.AccuracyNaiveBayesValue.Location = new System.Drawing.Point(512, 12);
+            this.AccuracyNaiveBayesValue.Name = "AccuracyNaiveBayesValue";
+            this.AccuracyNaiveBayesValue.Size = new System.Drawing.Size(0, 13);
+            this.AccuracyNaiveBayesValue.TabIndex = 4;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(572, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 13);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Error";
+            // 
+            // ErrorNaiveBayesValue
+            // 
+            this.ErrorNaiveBayesValue.AutoSize = true;
+            this.ErrorNaiveBayesValue.Location = new System.Drawing.Point(629, 12);
+            this.ErrorNaiveBayesValue.Name = "ErrorNaiveBayesValue";
+            this.ErrorNaiveBayesValue.Size = new System.Drawing.Size(0, 13);
+            this.ErrorNaiveBayesValue.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(572, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Data Set Size";
+            // 
+            // DataSetSizeNaiveBayes
+            // 
+            this.DataSetSizeNaiveBayes.AutoSize = true;
+            this.DataSetSizeNaiveBayes.Location = new System.Drawing.Point(667, 45);
+            this.DataSetSizeNaiveBayes.Name = "DataSetSizeNaiveBayes";
+            this.DataSetSizeNaiveBayes.Size = new System.Drawing.Size(0, 13);
+            this.DataSetSizeNaiveBayes.TabIndex = 8;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +461,12 @@
             this.TrainingTab.PerformLayout();
             this.TestingPage.ResumeLayout(false);
             this.TestingPage.PerformLayout();
+            this.MCSVMTab.ResumeLayout(false);
+            this.MCSVMTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MCSVMGridView)).EndInit();
+            this.NaiveBayes.ResumeLayout(false);
+            this.NaiveBayes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NaiveBayesGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -270,7 +480,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label DataSetSizeValue;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label AccuractyLabelValue;
+        private System.Windows.Forms.Label AccuracyLabelValue;
         private System.Windows.Forms.TabControl TabController;
         private System.Windows.Forms.TabPage TrainingTab;
         private System.Windows.Forms.TabPage TestingPage;
@@ -281,6 +491,24 @@
         private System.Windows.Forms.Button TestCalculateButton;
         private System.Windows.Forms.Label TestBestArrayValue;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage MCSVMTab;
+        private System.Windows.Forms.DataGridView MCSVMGridView;
+        private System.Windows.Forms.Button LoadMCSVMArray;
+        private System.Windows.Forms.Label AccuracyMCSVMValue;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label ErrorMCSVMValue;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label DataSetMCSVMValue;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabPage NaiveBayes;
+        private System.Windows.Forms.Button LoadNaiveBayesArray;
+        private System.Windows.Forms.DataGridView NaiveBayesGridView;
+        private System.Windows.Forms.Label AccuracyNaiveBayesValue;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label ErrorNaiveBayesValue;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label DataSetSizeNaiveBayes;
     }
 }
 

@@ -7,10 +7,14 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using Accord.MachineLearning.Bayes;
 using Accord.MachineLearning.DecisionTrees;
 using Accord.MachineLearning.DecisionTrees.Learning;
+using Accord.MachineLearning.VectorMachines;
+using Accord.MachineLearning.VectorMachines.Learning;
 using Accord.Math;
 using Accord.Statistics.Filters;
+using Accord.Statistics.Kernels;
 
 namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {
@@ -29,10 +33,18 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         private DecisionTree tree;
         private C45Learning c45;
 
+        private MulticlassSupportVectorMachine mcsvm;
+        private MulticlassSupportVectorLearning mcsvmLearning;
+
+        private NaiveBayes nb;
+        private int[][] IntInputs;
+        private int[] SymbolCounts;
+        private int ClassCount;
+
         // Labels for the DataTable
         private string[] inputColumns =
         {
-            "Array Size", "Runs", "Array Type", "Insertion Sort (\u03BCs)", "Shell Sort (\u03BCs)",
+            "Array Size", "Runs", /*"Array Type",*/ "Insertion Sort (\u03BCs)", "Shell Sort (\u03BCs)",
             "Heap Sort (\u03BCs)", "Merge Sort (\u03BCs)", "Quick Sort (\u03BCs)", "Parallel Merge Sort (\u03BCs)"
         };
         private string outputColumn = "Selected Sorting Algorithm";
@@ -52,7 +64,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         {
             object[] sr =
             {
-                r.arraySize + "", r.runs + "", r.arraytype, r.insertionSortExecutionTime + "",
+                r.arraySize + "", r.runs + "", /*r.arraytype,*/ r.insertionSortExecutionTime + "",
                 r.shellSortExecutionTime + "", r.heapSortExecutionTime + "", r.mergeSortExecutionTime + "",
                 r.quickSortExecutionTime + "", r.parallelMergeSortExecutionTime + "", r.bestClass
             };
@@ -63,13 +75,17 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         // Constructs the Symbol table
         public void Codify()
         {
-            string[] cols = { "Array Size", "Runs", "Selected Sorting Algorithm" };
-            string[] cols_ip = { "Array Size", "Runs" };
+            string[] cols = {"Array Size", "Runs", "Selected Sorting Algorithm"};
+            string[] cols_ip = {"Array Size", "Runs"};
             string cols_op = "Selected Sorting Algorithm";
             codebook = new Codification(Table, cols);
             Symbols = codebook.Apply(Table);
             Inputs = Symbols.ToArray(cols_ip);
             Outputs = Symbols.ToArray<int>(cols_op);
+            IntInputs = Symbols.ToArray<int>(cols_ip);
+
+            SymbolCounts = new int[2] { codebook["Array Size"].Symbols, codebook["Runs"].Symbols };
+            ClassCount = codebook["Selected Sorting Algorithm"].Symbols;
         }
 
         // Loads up the Decision Tree
@@ -77,19 +93,18 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         {
             string[] cols = { "Array Size", "Runs" };
             var attributes = DecisionVariable.FromCodebook(codebook, cols);
-            tree = new DecisionTree(attributes, 6);
+            tree = new DecisionTree(attributes, ClassCount);
         }
 
         // Returns Error as a percentage. Best is 0.0, Worst is 1.0
-        public double Learn()
+        public double TreeLearn()
         {
             c45 = new C45Learning(tree);
             return c45.Run(Inputs, Outputs);
         }
 
-        
         // Actual Selection using Decision Tree
-        public string GetBestAlgorithmForInput(string[] input, bool returnNonTranslatedInt)
+        public string GetBestAlgorithmForInputTree(string[] input, bool returnNonTranslatedInt)
         {
             try
             {
@@ -104,7 +119,86 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 {
                     bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
                 }
-                
+
+                return bestAlgorithm;
+            }
+            catch (Exception ex)
+            {
+                return "Could not match inputs";
+            }
+        }
+
+        public void CreateMCSVM()
+        {
+            string[] cols = { "Array Size", "Runs" };
+            IKernel kernel = new Linear();
+            mcsvm = new MulticlassSupportVectorMachine(inputs: 2, kernel: kernel, classes: ClassCount);
+        }
+
+        public double MCSVMLearn()
+        {
+            mcsvmLearning = new MulticlassSupportVectorLearning(mcsvm, Inputs, Outputs);
+            mcsvmLearning.Algorithm = (machine, inputs, outputs, class1, class2) => new SequentialMinimalOptimization(machine, inputs, outputs)
+            {
+               Complexity = 0.1
+            };
+            return mcsvmLearning.Run();
+        }
+
+        // Actual Selection using MultiClassSupportVectorMachine
+        public string GetBestAlgorithmForInputMCSVM(string[] input, bool returnNonTranslatedInt)
+        {
+            try
+            {
+                double[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
+                int result = mcsvm.Compute(codes);
+                string bestAlgorithm;
+                if (returnNonTranslatedInt)
+                {
+                    bestAlgorithm = result + "";
+                }
+                else
+                {
+                    bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
+                }
+
+                return bestAlgorithm;
+            }
+            catch (Exception ex)
+            {
+                return "Could not match inputs";
+            }
+        }
+
+
+        public void CreateNaiveBayes()
+        {
+            string[] cols = { "Array Size", "Runs" };
+            nb = new NaiveBayes(ClassCount, SymbolCounts);
+        }
+
+        public double LearnNaiveBayes()
+        {
+            return nb.Estimate(IntInputs, Outputs);
+        }
+
+        // Actual Selection using MultiClassSupportVectorMachine
+        public string GetBestAlgorithmForInputNaiveBayes(string[] input, bool returnNonTranslatedInt)
+        {
+            try
+            {
+                int[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
+                int result = nb.Compute(codes);
+                string bestAlgorithm;
+                if (returnNonTranslatedInt)
+                {
+                    bestAlgorithm = result + "";
+                }
+                else
+                {
+                    bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
+                }
+
                 return bestAlgorithm;
             }
             catch (Exception ex)
