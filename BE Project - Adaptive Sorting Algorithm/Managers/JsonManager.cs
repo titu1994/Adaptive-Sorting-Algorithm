@@ -11,6 +11,17 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {
     class JsonManager
     {
+        // File names for Array of size 50
+        public static string[] array50 = {
+        Resources._50_Random,
+        Resources._50_AlmostSorted_1,
+        Resources._50_AlmostSorted_2,
+        Resources._50_AlmostSorted_3,
+        Resources._50_AlmostSorted_4,
+        Resources._50_AlmostSorted_5,
+        Resources._50_ReverseSorted
+    };
+
         // File names for Array of size 100
         public static string[] array100 = {
         Resources._100_Random,
@@ -73,13 +84,16 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         public static int TypeAlmostSorted4 = 4; // 40% sorted recurring fragments
         public static int TypeAlmostSorted5 = 5; // 50% sorted recurring fragments
         public static int TypeReverseSorted = 6; // Reverse sorted
-        //END of ARRAY TYPES
+                                                 //END of ARRAY TYPES
 
+        public static int Size50 = 50;
         public static int Size100 = 100;
         public static int Size1000 = 1000;
         public static int Size10000 = 10000;
         public static int Size100000 = 100000;
+        public static int Size500000 = 500000;
         public static int Size1000000 = 1000000;
+
 
         // Creates an iterator to load the next result for the given Array filename
         public static IEnumerable<string> GetNextResult(string file)

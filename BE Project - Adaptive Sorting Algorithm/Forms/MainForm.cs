@@ -24,9 +24,6 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
 
             TrainingProgressBarDecisionTrees.Minimum =
                 TrainingProgressBarMCSVM.Minimum = TrainingProgressBarNaiveBayes.Minimum = 0;
-
-            TrainingProgressBarDecisionTrees.Maximum =
-               TrainingProgressBarMCSVM.Maximum = TrainingProgressBarNaiveBayes.Maximum = 2390;
         }
 
 
@@ -42,6 +39,11 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                 manager.Table.Clear();
             manager.LoadAllResults();
             ArrayGridView.DataSource = manager.Table;
+
+
+            TrainingProgressBarDecisionTrees.Maximum =
+              TrainingProgressBarMCSVM.Maximum = TrainingProgressBarNaiveBayes.Maximum = ArrayGridView.RowCount;
+
 
             manager.Codify();
             manager.CreateDecisionTree();
@@ -90,6 +92,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             manager.LoadAllResults();
             MCSVMGridView.DataSource = manager.Table;
 
+            TrainingProgressBarDecisionTrees.Maximum =
+              TrainingProgressBarMCSVM.Maximum = TrainingProgressBarNaiveBayes.Maximum = MCSVMGridView.RowCount;
+
             manager.Codify();
             manager.CreateMCSVM();
             errorMCSVM = manager.MCSVMLearn();
@@ -135,6 +140,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                 manager.Table.Clear();
             manager.LoadAllResults();
             NaiveBayesGridView.DataSource = manager.Table;
+
+            TrainingProgressBarDecisionTrees.Maximum =
+              TrainingProgressBarMCSVM.Maximum = TrainingProgressBarNaiveBayes.Maximum = NaiveBayesGridView.RowCount;
 
             manager.Codify();
             manager.CreateNaiveBayes();

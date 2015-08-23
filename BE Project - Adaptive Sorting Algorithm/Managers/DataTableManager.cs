@@ -74,6 +74,28 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             Table.Rows.Add(sr);
         }
 
+        public void LoadAllResults()
+        {
+            string line;
+            string filename;
+            string[][] arrays = { JsonManager.array100, JsonManager.array1000, JsonManager.array10000, JsonManager.array100000, JsonManager.array1000000 };
+            JsonManager.Result result;
+
+            for (int i = 0; i < arrays.Length; i++)
+            {
+                for (int j = 0; j < arrays[i].Length; j++)
+                {
+                    filename = arrays[i][j];
+
+                    foreach (string json in JsonManager.GetNextResult(filename))
+                    {
+                        result = JsonManager.ParseResult(json);
+                        AddResult(result);
+                    }
+                }
+            }
+        }
+
         // Convert Data Table of strings into double[] inputs and int output
         // Constructs the Symbol table
         public void Codify()
@@ -233,27 +255,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         }
 
 
-        public void LoadAllResults()
-        {
-            string line;
-            string filename;
-            string[][] arrays = { JsonManager.array100, JsonManager.array1000, JsonManager.array10000, JsonManager.array100000, JsonManager.array1000000 };
-            JsonManager.Result result;
-
-            for (int i = 0; i < arrays.Length; i++)
-            {
-                for (int j = 0; j < arrays[i].Length; j++)
-                {
-                    filename = arrays[i][j];
-
-                    foreach (string json in JsonManager.GetNextResult(filename))
-                    {
-                        result = JsonManager.ParseResult(json);
-                        AddResult(result);
-                    }
-                }
-            }
-        }
+       
 
     }
 }

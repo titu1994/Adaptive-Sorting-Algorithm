@@ -143,6 +143,13 @@
     <None Include="Resources\1000000-AlmostSorted-5.json" />
     <None Include="Resources\1000000-Random.json" />
     <None Include="Resources\1000000-ReverseSorted.json" />
+    <None Include="Resources\50-AlmostSorted-1.json" />
+    <None Include="Resources\50-AlmostSorted-2.json" />
+    <None Include="Resources\50-AlmostSorted-3.json" />
+    <None Include="Resources\50-AlmostSorted-4.json" />
+    <None Include="Resources\50-AlmostSorted-5.json" />
+    <None Include="Resources\50-Random.json" />
+    <None Include="Resources\50-ReverseSorted.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -116,9 +116,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.5,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:79,&quot;shellSortExecutionTime&quot;:32,&quot;heapSortExecutionTime&quot;:111,&quot;mergeSortExecutionTime&quot;:73,&quot;quickSortExecutionTime&quot;:339,&quot;parallelMergeSortExecutionTime&quot;:44}
-        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.47,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:71,&quot;shellSortExecutionTime&quot;:29,&quot;heapSortExecutionTime&quot;:34,&quot;mergeSortExecutionTime&quot;:71,&quot;quickSortExecutionTime&quot;:31,&quot;parallelMergeSortExecutionTime&quot;:36}
-        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.48,&quot;arraytype&quot;:&quot;Random&quot; [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:100,&quot;runs&quot;:0.51,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:4,&quot;shellSortExecutionTime&quot;:28,&quot;heapSortExecutionTime&quot;:22,&quot;mergeSortExecutionTime&quot;:56,&quot;quickSortExecutionTime&quot;:9,&quot;parallelMergeSortExecutionTime&quot;:9}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.54,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:3,&quot;shellSortExecutionTime&quot;:35,&quot;heapSortExecutionTime&quot;:17,&quot;mergeSortExecutionTime&quot;:11,&quot;quickSortExecutionTime&quot;:10,&quot;parallelMergeSortExecutionTime&quot;:25}
+        ///{&quot;arraySize&quot;:100,&quot;runs&quot;:0.48,&quot;arraytype&quot;:&quot;Random&quot;,&quot;ins [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string _100_Random {
             get {
@@ -270,9 +270,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.5005,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:16458,&quot;shellSortExecutionTime&quot;:867,&quot;heapSortExecutionTime&quot;:1140,&quot;mergeSortExecutionTime&quot;:876,&quot;quickSortExecutionTime&quot;:683,&quot;parallelMergeSortExecutionTime&quot;:111657}
-        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.5017,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:14583,&quot;shellSortExecutionTime&quot;:861,&quot;heapSortExecutionTime&quot;:1128,&quot;mergeSortExecutionTime&quot;:832,&quot;quickSortExecutionTime&quot;:670,&quot;parallelMergeSortExecutionTime&quot;:938}
-        ///{&quot;arraySize&quot;:10000,&quot;r [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:10000,&quot;runs&quot;:0.5017,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:14583,&quot;shellSortExecutionTime&quot;:861,&quot;heapSortExecutionTime&quot;:1128,&quot;mergeSortExecutionTime&quot;:832,&quot;quickSortExecutionTime&quot;:670,&quot;parallelMergeSortExecutionTime&quot;:938}
+        ///{&quot;arraySize&quot;:10000,&quot;runs&quot;:0.5036,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:14116,&quot;shellSortExecutionTime&quot;:933,&quot;heapSortExecutionTime&quot;:1381,&quot;mergeSortExecutionTime&quot;:1223,&quot;quickSortExecutionTime&quot;:804,&quot;parallelMergeSortExecutionTime&quot;:1559}
+        ///{&quot;arraySize&quot;:10000,&quot;ru [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string _10000_Random {
             get {
@@ -430,6 +430,83 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Properties {
         internal static string _1000000_ReverseSorted {
             get {
                 return ResourceManager.GetString("_1000000_ReverseSorted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:50,&quot;runs&quot;:0.2,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:5,&quot;shellSortExecutionTime&quot;:24,&quot;heapSortExecutionTime&quot;:9,&quot;mergeSortExecutionTime&quot;:6,&quot;quickSortExecutionTime&quot;:13,&quot;parallelMergeSortExecutionTime&quot;:6}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.2,&quot;arraytype&quot;:&quot;Almost-Sorted-0.1&quot;,&quot;insertionSortExecutionTime&quot;:4,&quot;shellSortExecutionTime&quot;:4,&quot;heapSortExecutionTime&quot;:9,&quot;mergeSortExecutionTime&quot;:5,&quot;quickSortExecutionTime&quot;:72,&quot;parallelMergeSortExecutionTime&quot;:4}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.2,&quot;arraytype&quot;:&quot;A [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string _50_AlmostSorted_1 {
+            get {
+                return ResourceManager.GetString("_50_AlmostSorted_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:50,&quot;runs&quot;:0.1,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:3,&quot;shellSortExecutionTime&quot;:6,&quot;heapSortExecutionTime&quot;:5,&quot;mergeSortExecutionTime&quot;:5,&quot;quickSortExecutionTime&quot;:17,&quot;parallelMergeSortExecutionTime&quot;:20}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.1,&quot;arraytype&quot;:&quot;Almost-Sorted-0.2&quot;,&quot;insertionSortExecutionTime&quot;:4,&quot;shellSortExecutionTime&quot;:4,&quot;heapSortExecutionTime&quot;:5,&quot;mergeSortExecutionTime&quot;:5,&quot;quickSortExecutionTime&quot;:32,&quot;parallelMergeSortExecutionTime&quot;:16}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.1,&quot;arraytype&quot;:&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string _50_AlmostSorted_2 {
+            get {
+                return ResourceManager.GetString("_50_AlmostSorted_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:50,&quot;runs&quot;:0.08,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:1,&quot;shellSortExecutionTime&quot;:4,&quot;heapSortExecutionTime&quot;:5,&quot;mergeSortExecutionTime&quot;:5,&quot;quickSortExecutionTime&quot;:3,&quot;parallelMergeSortExecutionTime&quot;:3}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.08,&quot;arraytype&quot;:&quot;Almost-Sorted-0.33&quot;,&quot;insertionSortExecutionTime&quot;:1,&quot;shellSortExecutionTime&quot;:4,&quot;heapSortExecutionTime&quot;:5,&quot;mergeSortExecutionTime&quot;:5,&quot;quickSortExecutionTime&quot;:3,&quot;parallelMergeSortExecutionTime&quot;:4}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.08,&quot;arraytype&quot;: [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string _50_AlmostSorted_3 {
+            get {
+                return ResourceManager.GetString("_50_AlmostSorted_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:50,&quot;runs&quot;:0.06,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:1,&quot;shellSortExecutionTime&quot;:1,&quot;heapSortExecutionTime&quot;:5,&quot;mergeSortExecutionTime&quot;:4,&quot;quickSortExecutionTime&quot;:19,&quot;parallelMergeSortExecutionTime&quot;:3}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.06,&quot;arraytype&quot;:&quot;Almost-Sorted-0.4&quot;,&quot;insertionSortExecutionTime&quot;:1,&quot;shellSortExecutionTime&quot;:1,&quot;heapSortExecutionTime&quot;:4,&quot;mergeSortExecutionTime&quot;:4,&quot;quickSortExecutionTime&quot;:2,&quot;parallelMergeSortExecutionTime&quot;:3}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.06,&quot;arraytype&quot;:&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string _50_AlmostSorted_4 {
+            get {
+                return ResourceManager.GetString("_50_AlmostSorted_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:50,&quot;runs&quot;:0.04,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:0,&quot;shellSortExecutionTime&quot;:1,&quot;heapSortExecutionTime&quot;:4,&quot;mergeSortExecutionTime&quot;:2,&quot;quickSortExecutionTime&quot;:2,&quot;parallelMergeSortExecutionTime&quot;:2}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.04,&quot;arraytype&quot;:&quot;Almost-Sorted-0.5&quot;,&quot;insertionSortExecutionTime&quot;:0,&quot;shellSortExecutionTime&quot;:1,&quot;heapSortExecutionTime&quot;:4,&quot;mergeSortExecutionTime&quot;:4,&quot;quickSortExecutionTime&quot;:2,&quot;parallelMergeSortExecutionTime&quot;:2}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.04,&quot;arraytype&quot;:&quot;A [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string _50_AlmostSorted_5 {
+            get {
+                return ResourceManager.GetString("_50_AlmostSorted_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:50,&quot;runs&quot;:0.52,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:18,&quot;shellSortExecutionTime&quot;:12,&quot;heapSortExecutionTime&quot;:42,&quot;mergeSortExecutionTime&quot;:24,&quot;quickSortExecutionTime&quot;:188,&quot;parallelMergeSortExecutionTime&quot;:18}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.48,&quot;arraytype&quot;:&quot;Random&quot;,&quot;insertionSortExecutionTime&quot;:22,&quot;shellSortExecutionTime&quot;:13,&quot;heapSortExecutionTime&quot;:22,&quot;mergeSortExecutionTime&quot;:31,&quot;quickSortExecutionTime&quot;:16,&quot;parallelMergeSortExecutionTime&quot;:14}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:0.52,&quot;arraytype&quot;:&quot;Random&quot;,&quot;i [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string _50_Random {
+            get {
+                return ResourceManager.GetString("_50_Random", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {&quot;arraySize&quot;:50,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:1,&quot;shellSortExecutionTime&quot;:0,&quot;heapSortExecutionTime&quot;:3,&quot;mergeSortExecutionTime&quot;:3,&quot;quickSortExecutionTime&quot;:1,&quot;parallelMergeSortExecutionTime&quot;:2}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-Sorted&quot;,&quot;insertionSortExecutionTime&quot;:2,&quot;shellSortExecutionTime&quot;:1,&quot;heapSortExecutionTime&quot;:4,&quot;mergeSortExecutionTime&quot;:3,&quot;quickSortExecutionTime&quot;:1,&quot;parallelMergeSortExecutionTime&quot;:4}
+        ///{&quot;arraySize&quot;:50,&quot;runs&quot;:1.0,&quot;arraytype&quot;:&quot;Reverse-So [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string _50_ReverseSorted {
+            get {
+                return ResourceManager.GetString("_50_ReverseSorted", resourceCulture);
             }
         }
     }
