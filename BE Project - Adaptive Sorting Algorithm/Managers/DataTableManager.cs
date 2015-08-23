@@ -15,6 +15,8 @@ using Accord.MachineLearning.VectorMachines.Learning;
 using Accord.Math;
 using Accord.Statistics.Filters;
 using Accord.Statistics.Kernels;
+using Accord.Statistics.Models.Regression;
+using Accord.Statistics.Models.Regression.Fitting;
 
 namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {
@@ -30,6 +32,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         // Codified Output vector
         public int[] Outputs { get; set; }
 
+        private int[] SymbolCounts;
+        private int ClassCount;
+
         private DecisionTree tree;
         private C45Learning c45;
 
@@ -38,8 +43,6 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
         private NaiveBayes nb;
         private int[][] IntInputs;
-        private int[] SymbolCounts;
-        private int ClassCount;
 
         // Labels for the DataTable
         private string[] inputColumns =
@@ -86,6 +89,10 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
             SymbolCounts = new int[2] { codebook["Array Size"].Symbols, codebook["Runs"].Symbols };
             ClassCount = codebook["Selected Sorting Algorithm"].Symbols;
+
+            var x = codebook["Selected Sorting Algorithm"].Mapping;
+            foreach(var val in x.Keys) 
+                Console.WriteLine(val + "");
         }
 
         // Loads up the Decision Tree
@@ -169,8 +176,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 return "Could not match inputs";
             }
         }
-
-
+        
         public void CreateNaiveBayes()
         {
             string[] cols = { "Array Size", "Runs" };
@@ -206,6 +212,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 return "Could not match inputs";
             }
         }
+
 
         public void SaveTreeFunction()
         {

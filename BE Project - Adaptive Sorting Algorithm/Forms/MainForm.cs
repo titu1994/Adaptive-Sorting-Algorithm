@@ -15,13 +15,28 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
     {
         private DataTableManager manager;
 
+        private double errorDecisionTree, errorMCSVM, errorNaiveBayes;
+
         public MainForm()
         {
             InitializeComponent();
             manager = new DataTableManager();
+
+            TrainingProgressBarDecisionTrees.Minimum =
+                TrainingProgressBarMCSVM.Minimum = TrainingProgressBarNaiveBayes.Minimum = 0;
+
+            TrainingProgressBarDecisionTrees.Maximum =
+               TrainingProgressBarMCSVM.Maximum = TrainingProgressBarNaiveBayes.Maximum = 2390;
         }
 
+
         private void loadArrayButton_Click(object sender, EventArgs e)
+        {
+            TrainingProgressBarDecisionTrees.Visible = true;
+            LoadDecisionTree();
+        }
+
+        private void LoadDecisionTree()
         {
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
@@ -30,18 +45,14 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
 
             manager.Codify();
             manager.CreateDecisionTree();
-            double error = manager.TreeLearn();
-
-            ErrorLabelValue.Text = Math.Round(error*100, 4) + " %";
-            AccuracyLabelValue.Text = (100 - (Math.Round(error*100, 4))) + " %";
-            DataSetSizeValue.Text = manager.Table.Rows.Count + "";
+            errorDecisionTree = manager.TreeLearn();
 
             string[] data = new string[2];
             string bestAlgo;
             for (int i = 0; i < ArrayGridView.RowCount; i++)
             {
-                data[0] = (string) ArrayGridView.Rows[i].Cells[0].Value;
-                data[1] = (string) ArrayGridView.Rows[i].Cells[1].Value;
+                data[0] = (string)ArrayGridView.Rows[i].Cells[0].Value;
+                data[1] = (string)ArrayGridView.Rows[i].Cells[1].Value;
 
                 bestAlgo = manager.GetBestAlgorithmForInputTree(data, false);
                 if (bestAlgo.Equals(ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].Value))
@@ -53,12 +64,26 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                     ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.OrangeRed;
                     ArrayGridView.Rows[i].Cells["Selected Sorting Algorithm"].ToolTipText = "Calculated : " + bestAlgo;
                 }
+
+                //Publish Progress
+                TrainingProgressBarDecisionTrees.Value = i;
             }
 
             //manager.SaveTreeFunction();
+
+            TrainingProgressBarDecisionTrees.Visible = false;
+            ErrorLabelValue.Text = Math.Round(errorDecisionTree * 100, 4) + " %";
+            AccuracyLabelValue.Text = (100 - (Math.Round(errorDecisionTree * 100, 4))) + " %";
+            DataSetSizeValue.Text = manager.Table.Rows.Count + "";
         }
 
         private void LoadMCSVMArray_Click(object sender, EventArgs e)
+        {
+            TrainingProgressBarMCSVM.Visible = true;
+            LoadMCSVM();
+        }
+
+        private void LoadMCSVM()
         {
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
@@ -67,14 +92,11 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
 
             manager.Codify();
             manager.CreateMCSVM();
-            double error = manager.MCSVMLearn();
-
-            ErrorMCSVMValue.Text = Math.Round(error * 100, 4) + " %";
-            AccuracyMCSVMValue.Text = (100 - (Math.Round(error * 100, 4))) + " %";
-            DataSetMCSVMValue.Text = manager.Table.Rows.Count + "";
+            errorMCSVM = manager.MCSVMLearn();
 
             string[] data = new string[2];
             string bestAlgo;
+            TrainingProgressBarMCSVM.Value = 0;
             for (int i = 0; i < MCSVMGridView.RowCount; i++)
             {
                 data[0] = (string)MCSVMGridView.Rows[i].Cells[0].Value;
@@ -90,11 +112,24 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                     MCSVMGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.OrangeRed;
                     MCSVMGridView.Rows[i].Cells["Selected Sorting Algorithm"].ToolTipText = "Calculated : " + bestAlgo;
                 }
+
+                //Publish Progress
+                TrainingProgressBarMCSVM.Value = i;
             }
 
+            TrainingProgressBarMCSVM.Visible = false;
+            ErrorMCSVMValue.Text = Math.Round(errorMCSVM * 100, 4) + " %";
+            AccuracyMCSVMValue.Text = (100 - (Math.Round(errorMCSVM * 100, 4))) + " %";
+            DataSetMCSVMValue.Text = manager.Table.Rows.Count + "";
         }
 
         private void LoadNaiveBayesArray_Click(object sender, EventArgs e)
+        {
+            TrainingProgressBarNaiveBayes.Visible = true;
+            LoadNaiveBayes();
+        }
+
+        private void LoadNaiveBayes()
         {
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
@@ -103,11 +138,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
 
             manager.Codify();
             manager.CreateNaiveBayes();
-            double error = manager.LearnNaiveBayes();
-
-            ErrorNaiveBayesValue.Text = Math.Round(error * 100, 4) + " %";
-            AccuracyNaiveBayesValue.Text = (100 - (Math.Round(error * 100, 4))) + " %";
-            DataSetSizeNaiveBayes.Text = manager.Table.Rows.Count + "";
+            errorNaiveBayes = manager.LearnNaiveBayes();
 
             string[] data = new string[2];
             string bestAlgo;
@@ -126,7 +157,15 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
                     NaiveBayesGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.OrangeRed;
                     NaiveBayesGridView.Rows[i].Cells["Selected Sorting Algorithm"].ToolTipText = "Calculated : " + bestAlgo;
                 }
+
+                //Publish Progress
+                TrainingProgressBarNaiveBayes.Value = i;
             }
+
+            TrainingProgressBarNaiveBayes.Visible = false;
+            ErrorNaiveBayesValue.Text = Math.Round(errorNaiveBayes * 100, 4) + " %";
+            AccuracyNaiveBayesValue.Text = (100 - (Math.Round(errorNaiveBayes * 100, 4))) + " %";
+            DataSetSizeNaiveBayes.Text = manager.Table.Rows.Count + "";
         }
 
 
@@ -143,5 +182,6 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
 
             TestBestArrayValue.Text = bestAlgo;
         }
+
     }
 }
