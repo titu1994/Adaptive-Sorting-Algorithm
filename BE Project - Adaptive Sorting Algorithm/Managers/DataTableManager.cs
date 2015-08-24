@@ -32,9 +32,12 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         // Codified Output vector
         public int[] Outputs { get; set; }
 
+        // Input Symbol Counts
         private int[] SymbolCounts;
+        // Output Class Counts
         private int ClassCount;
 
+        // ML Algorithms and consequent learning classes
         private DecisionTree tree;
         private C45Learning c45;
 
@@ -42,6 +45,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         private MulticlassSupportVectorLearning mcsvmLearning;
 
         private NaiveBayes nb;
+        // Inputs formatted to int[][]
         private int[][] IntInputs;
 
         // Labels for the DataTable
@@ -74,6 +78,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             Table.Rows.Add(sr);
         }
 
+        // Load the Data Table with all of the JSONManager data
         public void LoadAllResults()
         {
             string line;
@@ -112,6 +117,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             SymbolCounts = new int[2] { codebook["Array Size"].Symbols, codebook["Runs"].Symbols };
             ClassCount = codebook["Selected Sorting Algorithm"].Symbols;
 
+            // Declares the Sorting methods needed : All except HeapSort
             var x = codebook["Selected Sorting Algorithm"].Mapping;
             foreach(var val in x.Keys) 
                 Console.WriteLine(val + "");
@@ -157,6 +163,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             }
         }
 
+        // Loads the Multi Class SVM and its Kernel Function (Linear)
         public void CreateMCSVM()
         {
             string[] cols = { "Array Size", "Runs" };
@@ -164,6 +171,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             mcsvm = new MulticlassSupportVectorMachine(inputs: 2, kernel: kernel, classes: ClassCount);
         }
 
+        // Creates the Learning function for MC-SVM : SequentialMinimalOptimization with a hardline Complexity of 0.1
         public double MCSVMLearn()
         {
             mcsvmLearning = new MulticlassSupportVectorLearning(mcsvm, Inputs, Outputs);
@@ -174,7 +182,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             return mcsvmLearning.Run();
         }
 
-        // Actual Selection using MultiClassSupportVectorMachine
+        // Actual Selection using MultiClass-SupportVectorMachine
         public string GetBestAlgorithmForInputMCSVM(string[] input, bool returnNonTranslatedInt)
         {
             try
@@ -199,12 +207,14 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             }
         }
         
+        // Creates Naive Bayes Machine
         public void CreateNaiveBayes()
         {
             string[] cols = { "Array Size", "Runs" };
             nb = new NaiveBayes(ClassCount, SymbolCounts);
         }
 
+        // Utilizes Naive Bayes inbuilt Estimation for Learning
         public double LearnNaiveBayes()
         {
             return nb.Estimate(IntInputs, Outputs);
@@ -235,7 +245,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             }
         }
 
-
+        // Stores the generated DecisionTree into a .dll file so we can decompile
+        // the class and obtain the raw calculations it performs for decisions
         public void SaveTreeFunction()
         {
             var da = AppDomain.CurrentDomain.DefineDynamicAssembly(
@@ -253,9 +264,6 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
             da.Save("dyn.dll");
         }
-
-
-       
 
     }
 }

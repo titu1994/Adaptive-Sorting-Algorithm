@@ -85,7 +85,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         public static int TypeAlmostSorted5 = 5; // 50% sorted recurring fragments
         public static int TypeReverseSorted = 6; // Reverse sorted
                                                  //END of ARRAY TYPES
-
+        // Constant sizes of each array
         public static int Size50 = 50;
         public static int Size100 = 100;
         public static int Size1000 = 1000;
@@ -149,110 +149,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             return r;
         }
 
-        /*// Helper method to obtain filename of Random array of some size
-        public static string getRandomArrayOfSize(int size)
-        {
-            switch (size)
-            {
-                case 100:
-                    return array100[TypeRandom];
-                case 1000:
-                    return array1000[TypeRandom];
-                case 10000:
-                    return array10000[TypeRandom];
-                case 1000000:
-                    return array1000000[TypeRandom];
-            }
-            return array100[TypeRandom];
-        }
-
-        // Helper method to obtain filename of Reverse Sorted array of some size
-        public static string getReversedArrayOfSize(int size)
-        {
-            switch (size)
-            {
-                case 100:
-                    return array100[TypeReverseSorted];
-                case 1000:
-                    return array1000[TypeReverseSorted];
-                case 10000:
-                    return array10000[TypeReverseSorted];
-                case 1000000:
-                    return array1000000[TypeReverseSorted];
-            }
-            return array100[TypeRandom];
-        }
-
-        // Helper method to obtain filename of Almost Sorted array of some size
-        public static string getAlmostSortedArrayOfSize(int size, int preSortednessDegree)
-        {
-            switch (size)
-            {
-                case 100:
-                    switch (preSortednessDegree)
-                    {
-                        case 1:
-                            return array100[TypeAlmostSorted1];
-                        case 2:
-                            return array100[TypeAlmostSorted2];
-                        case 3:
-                            return array100[TypeAlmostSorted3];
-                        case 4:
-                            return array100[TypeAlmostSorted4];
-                        case 5:
-                            return array100[TypeAlmostSorted5];
-                    }
-                    return array100[TypeAlmostSorted1];
-                case 1000:
-                    switch (preSortednessDegree)
-                    {
-                        case 1:
-                            return array1000[TypeAlmostSorted1];
-                        case 2:
-                            return array1000[TypeAlmostSorted2];
-                        case 3:
-                            return array1000[TypeAlmostSorted3];
-                        case 4:
-                            return array1000[TypeAlmostSorted4];
-                        case 5:
-                            return array1000[TypeAlmostSorted5];
-                    }
-                    return array1000[TypeAlmostSorted1];
-                case 10000:
-                    switch (preSortednessDegree)
-                    {
-                        case 1:
-                            return array10000[TypeAlmostSorted1];
-                        case 2:
-                            return array10000[TypeAlmostSorted2];
-                        case 3:
-                            return array10000[TypeAlmostSorted3];
-                        case 4:
-                            return array10000[TypeAlmostSorted4];
-                        case 5:
-                            return array10000[TypeAlmostSorted5];
-                    }
-                    return array10000[TypeAlmostSorted1];
-                case 1000000:
-                    switch (preSortednessDegree)
-                    {
-                        case 1:
-                            return array1000000[TypeAlmostSorted1];
-                        case 2:
-                            return array1000000[TypeAlmostSorted2];
-                        case 3:
-                            return array1000000[TypeAlmostSorted3];
-                        case 4:
-                            return array1000000[TypeAlmostSorted4];
-                        case 5:
-                            return array1000000[TypeAlmostSorted5];
-                    }
-                    return array1000000[TypeAlmostSorted1];
-            }
-            return array100[TypeAlmostSorted1];
-        }*/
-
-        // Wrapper class to parse the JSON string into an object
+        // Wrapper class to parse the JSON string into an object from Java Results
         public class BaseResult
         {
             public int arraySize { get; set; }
