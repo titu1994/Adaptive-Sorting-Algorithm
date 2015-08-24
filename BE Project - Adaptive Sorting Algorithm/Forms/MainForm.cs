@@ -38,6 +38,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
             manager.LoadAllResults();
+            manager.SortTable(CheckBoxDecisionTrees.Checked);
+
             ArrayGridView.DataSource = manager.Table;
 
 
@@ -90,6 +92,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
             manager.LoadAllResults();
+            manager.SortTable(CheckBoxDecisionTrees.Checked);
+
             MCSVMGridView.DataSource = manager.Table;
 
             TrainingProgressBarDecisionTrees.Maximum =
@@ -139,6 +143,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
             manager.LoadAllResults();
+            manager.SortTable(CheckBoxDecisionTrees.Checked);
+
             NaiveBayesGridView.DataSource = manager.Table;
 
             TrainingProgressBarDecisionTrees.Maximum =

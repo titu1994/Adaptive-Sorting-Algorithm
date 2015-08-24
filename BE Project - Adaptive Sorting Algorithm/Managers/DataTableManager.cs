@@ -71,7 +71,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         {
             object[] sr =
             {
-                r.arraySize + "", r.runs + "", /*r.arraytype,*/ r.insertionSortExecutionTime + "",
+                r.arraySize + "", r.runs + "", /*r.arraytype,*/  r.insertionSortExecutionTime + "",
                 r.shellSortExecutionTime + "", r.heapSortExecutionTime + "", r.mergeSortExecutionTime + "",
                 r.quickSortExecutionTime + "", r.parallelMergeSortExecutionTime + "", r.bestClass
             };
@@ -98,6 +98,18 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                         AddResult(result);
                     }
                 }
+            }
+        }
+
+        public void SortTable(bool sort)
+        {
+            if (sort)
+            {
+                Table.DefaultView.Sort = "Array Size ASC, Runs ASC";
+            }
+            else
+            {
+                Table.DefaultView.Sort = "Array Size ASC";
             }
         }
 

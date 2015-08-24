@@ -38,7 +38,9 @@
             this.AccuracyLabelValue = new System.Windows.Forms.Label();
             this.TabController = new System.Windows.Forms.TabControl();
             this.TrainingTab = new System.Windows.Forms.TabPage();
+            this.TrainingProgressBarDecisionTrees = new System.Windows.Forms.ProgressBar();
             this.NaiveBayes = new System.Windows.Forms.TabPage();
+            this.TrainingProgressBarNaiveBayes = new System.Windows.Forms.ProgressBar();
             this.DataSetSizeNaiveBayes = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.ErrorNaiveBayesValue = new System.Windows.Forms.Label();
@@ -48,6 +50,7 @@
             this.NaiveBayesGridView = new System.Windows.Forms.DataGridView();
             this.LoadNaiveBayesArray = new System.Windows.Forms.Button();
             this.MCSVMTab = new System.Windows.Forms.TabPage();
+            this.TrainingProgressBarMCSVM = new System.Windows.Forms.ProgressBar();
             this.DataSetMCSVMValue = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ErrorMCSVMValue = new System.Windows.Forms.Label();
@@ -64,9 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.TestArraySizeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TrainingProgressBarDecisionTrees = new System.Windows.Forms.ProgressBar();
-            this.TrainingProgressBarNaiveBayes = new System.Windows.Forms.ProgressBar();
-            this.TrainingProgressBarMCSVM = new System.Windows.Forms.ProgressBar();
+            this.CheckBoxDecisionTrees = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ArrayGridView)).BeginInit();
             this.TabController.SuspendLayout();
             this.TrainingTab.SuspendLayout();
@@ -171,6 +172,7 @@
             // TrainingTab
             // 
             this.TrainingTab.BackColor = System.Drawing.Color.White;
+            this.TrainingTab.Controls.Add(this.CheckBoxDecisionTrees);
             this.TrainingTab.Controls.Add(this.TrainingProgressBarDecisionTrees);
             this.TrainingTab.Controls.Add(this.ArrayGridView);
             this.TrainingTab.Controls.Add(this.AccuracyLabelValue);
@@ -187,6 +189,15 @@
             this.TrainingTab.Size = new System.Drawing.Size(776, 535);
             this.TrainingTab.TabIndex = 0;
             this.TrainingTab.Text = "Train (Decision Trees)";
+            // 
+            // TrainingProgressBarDecisionTrees
+            // 
+            this.TrainingProgressBarDecisionTrees.BackColor = System.Drawing.Color.White;
+            this.TrainingProgressBarDecisionTrees.Location = new System.Drawing.Point(600, 512);
+            this.TrainingProgressBarDecisionTrees.Name = "TrainingProgressBarDecisionTrees";
+            this.TrainingProgressBarDecisionTrees.Size = new System.Drawing.Size(162, 23);
+            this.TrainingProgressBarDecisionTrees.TabIndex = 8;
+            this.TrainingProgressBarDecisionTrees.Visible = false;
             // 
             // NaiveBayes
             // 
@@ -205,6 +216,15 @@
             this.NaiveBayes.TabIndex = 3;
             this.NaiveBayes.Text = "Train (Naive Bayes)";
             this.NaiveBayes.UseVisualStyleBackColor = true;
+            // 
+            // TrainingProgressBarNaiveBayes
+            // 
+            this.TrainingProgressBarNaiveBayes.BackColor = System.Drawing.Color.White;
+            this.TrainingProgressBarNaiveBayes.Location = new System.Drawing.Point(606, 509);
+            this.TrainingProgressBarNaiveBayes.Name = "TrainingProgressBarNaiveBayes";
+            this.TrainingProgressBarNaiveBayes.Size = new System.Drawing.Size(162, 23);
+            this.TrainingProgressBarNaiveBayes.TabIndex = 9;
+            this.TrainingProgressBarNaiveBayes.Visible = false;
             // 
             // DataSetSizeNaiveBayes
             // 
@@ -297,6 +317,15 @@
             this.MCSVMTab.TabIndex = 2;
             this.MCSVMTab.Text = "Train (Multi Class SVM)";
             this.MCSVMTab.UseVisualStyleBackColor = true;
+            // 
+            // TrainingProgressBarMCSVM
+            // 
+            this.TrainingProgressBarMCSVM.BackColor = System.Drawing.Color.White;
+            this.TrainingProgressBarMCSVM.Location = new System.Drawing.Point(592, 512);
+            this.TrainingProgressBarMCSVM.Name = "TrainingProgressBarMCSVM";
+            this.TrainingProgressBarMCSVM.Size = new System.Drawing.Size(162, 23);
+            this.TrainingProgressBarMCSVM.TabIndex = 9;
+            this.TrainingProgressBarMCSVM.Visible = false;
             // 
             // DataSetMCSVMValue
             // 
@@ -454,32 +483,16 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Array Size";
             // 
-            // TrainingProgressBarDecisionTrees
+            // CheckBoxDecisionTrees
             // 
-            this.TrainingProgressBarDecisionTrees.BackColor = System.Drawing.Color.White;
-            this.TrainingProgressBarDecisionTrees.Location = new System.Drawing.Point(600, 512);
-            this.TrainingProgressBarDecisionTrees.Name = "TrainingProgressBarDecisionTrees";
-            this.TrainingProgressBarDecisionTrees.Size = new System.Drawing.Size(162, 23);
-            this.TrainingProgressBarDecisionTrees.TabIndex = 8;
-            this.TrainingProgressBarDecisionTrees.Visible = false;
-            // 
-            // TrainingProgressBarNaiveBayes
-            // 
-            this.TrainingProgressBarNaiveBayes.BackColor = System.Drawing.Color.White;
-            this.TrainingProgressBarNaiveBayes.Location = new System.Drawing.Point(606, 509);
-            this.TrainingProgressBarNaiveBayes.Name = "TrainingProgressBarNaiveBayes";
-            this.TrainingProgressBarNaiveBayes.Size = new System.Drawing.Size(162, 23);
-            this.TrainingProgressBarNaiveBayes.TabIndex = 9;
-            this.TrainingProgressBarNaiveBayes.Visible = false;
-            // 
-            // TrainingProgressBarMCSVM
-            // 
-            this.TrainingProgressBarMCSVM.BackColor = System.Drawing.Color.White;
-            this.TrainingProgressBarMCSVM.Location = new System.Drawing.Point(592, 512);
-            this.TrainingProgressBarMCSVM.Name = "TrainingProgressBarMCSVM";
-            this.TrainingProgressBarMCSVM.Size = new System.Drawing.Size(162, 23);
-            this.TrainingProgressBarMCSVM.TabIndex = 9;
-            this.TrainingProgressBarMCSVM.Visible = false;
+            this.CheckBoxDecisionTrees.AutoSize = true;
+            this.CheckBoxDecisionTrees.BackColor = System.Drawing.Color.White;
+            this.CheckBoxDecisionTrees.Location = new System.Drawing.Point(306, 6);
+            this.CheckBoxDecisionTrees.Name = "CheckBoxDecisionTrees";
+            this.CheckBoxDecisionTrees.Size = new System.Drawing.Size(73, 17);
+            this.CheckBoxDecisionTrees.TabIndex = 9;
+            this.CheckBoxDecisionTrees.Text = "Sort Runs";
+            this.CheckBoxDecisionTrees.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -548,6 +561,7 @@
         private System.Windows.Forms.ProgressBar TrainingProgressBarDecisionTrees;
         private System.Windows.Forms.ProgressBar TrainingProgressBarNaiveBayes;
         private System.Windows.Forms.ProgressBar TrainingProgressBarMCSVM;
+        private System.Windows.Forms.CheckBox CheckBoxDecisionTrees;
     }
 }
 
