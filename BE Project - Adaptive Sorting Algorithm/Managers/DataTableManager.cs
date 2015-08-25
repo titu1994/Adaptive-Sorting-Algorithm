@@ -187,10 +187,11 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         public double MCSVMLearn()
         {
             mcsvmLearning = new MulticlassSupportVectorLearning(mcsvm, Inputs, Outputs);
-            mcsvmLearning.Algorithm = (machine, inputs, outputs, class1, class2) => new SequentialMinimalOptimization(machine, inputs, outputs)
+            mcsvmLearning.Algorithm = (machine, inputs, outputs, class1, class2) => new LinearDualCoordinateDescent(machine, inputs, outputs)
             {
-               Complexity = 0.1
+                Complexity = 0.007
             };
+
             return mcsvmLearning.Run();
         }
 

@@ -92,7 +92,6 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
             manager.LoadAllResults();
-            manager.SortTable(CheckBoxDecisionTrees.Checked);
 
             MCSVMGridView.DataSource = manager.Table;
 
