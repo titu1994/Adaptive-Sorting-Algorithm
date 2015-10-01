@@ -32,6 +32,16 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         Resources._100_AlmostSorted_5,
         Resources._100_ReverseSorted
     };
+
+        public static string[] array500 = {
+        Resources._500_Random,
+        Resources._500_AlmostSorted_1,
+        Resources._500_AlmostSorted_2,
+        Resources._500_AlmostSorted_3,
+        Resources._500_AlmostSorted_4,
+        Resources._500_AlmostSorted_5,
+        Resources._500_ReverseSorted
+    };
         // File names for Array of size 1000 
         public static string[] array1000 = {
         Resources._1000_Random,

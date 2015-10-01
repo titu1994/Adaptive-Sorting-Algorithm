@@ -38,6 +38,7 @@
             this.AccuracyLabelValue = new System.Windows.Forms.Label();
             this.TabController = new System.Windows.Forms.TabControl();
             this.TrainingTab = new System.Windows.Forms.TabPage();
+            this.CheckBoxDecisionTrees = new System.Windows.Forms.CheckBox();
             this.TrainingProgressBarDecisionTrees = new System.Windows.Forms.ProgressBar();
             this.NaiveBayes = new System.Windows.Forms.TabPage();
             this.TrainingProgressBarNaiveBayes = new System.Windows.Forms.ProgressBar();
@@ -59,7 +60,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.MCSVMGridView = new System.Windows.Forms.DataGridView();
             this.LoadMCSVMArray = new System.Windows.Forms.Button();
+            this.LinearRegression = new System.Windows.Forms.TabPage();
+            this.LinearRegressionDataSetSize = new System.Windows.Forms.Label();
+            this.LinearRegressionError = new System.Windows.Forms.Label();
+            this.LiniearRegressionAccuracy = new System.Windows.Forms.Label();
+            this.LinearRegressionDataGridView = new System.Windows.Forms.DataGridView();
+            this.TrainLinearRegression = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.TestingPage = new System.Windows.Forms.TabPage();
+            this.NBButten = new System.Windows.Forms.Button();
             this.TestBestArrayValue = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.TestCalculateButton = new System.Windows.Forms.Button();
@@ -67,7 +78,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.TestArraySizeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.CheckBoxDecisionTrees = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ArrayGridView)).BeginInit();
             this.TabController.SuspendLayout();
             this.TrainingTab.SuspendLayout();
@@ -75,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.NaiveBayesGridView)).BeginInit();
             this.MCSVMTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MCSVMGridView)).BeginInit();
+            this.LinearRegression.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LinearRegressionDataGridView)).BeginInit();
             this.TestingPage.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +94,7 @@
             // 
             this.ArrayGridView.AllowUserToAddRows = false;
             this.ArrayGridView.AllowUserToDeleteRows = false;
+            this.ArrayGridView.BackgroundColor = System.Drawing.Color.White;
             this.ArrayGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ArrayGridView.GridColor = System.Drawing.Color.White;
             this.ArrayGridView.Location = new System.Drawing.Point(3, 66);
@@ -161,6 +174,7 @@
             this.TabController.Controls.Add(this.TrainingTab);
             this.TabController.Controls.Add(this.NaiveBayes);
             this.TabController.Controls.Add(this.MCSVMTab);
+            this.TabController.Controls.Add(this.LinearRegression);
             this.TabController.Controls.Add(this.TestingPage);
             this.TabController.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabController.Location = new System.Drawing.Point(0, 0);
@@ -189,6 +203,17 @@
             this.TrainingTab.Size = new System.Drawing.Size(776, 535);
             this.TrainingTab.TabIndex = 0;
             this.TrainingTab.Text = "Train (Decision Trees)";
+            // 
+            // CheckBoxDecisionTrees
+            // 
+            this.CheckBoxDecisionTrees.AutoSize = true;
+            this.CheckBoxDecisionTrees.BackColor = System.Drawing.Color.White;
+            this.CheckBoxDecisionTrees.Location = new System.Drawing.Point(306, 6);
+            this.CheckBoxDecisionTrees.Name = "CheckBoxDecisionTrees";
+            this.CheckBoxDecisionTrees.Size = new System.Drawing.Size(73, 17);
+            this.CheckBoxDecisionTrees.TabIndex = 9;
+            this.CheckBoxDecisionTrees.Text = "Sort Runs";
+            this.CheckBoxDecisionTrees.UseVisualStyleBackColor = false;
             // 
             // TrainingProgressBarDecisionTrees
             // 
@@ -281,6 +306,7 @@
             // 
             this.NaiveBayesGridView.AllowUserToAddRows = false;
             this.NaiveBayesGridView.AllowUserToDeleteRows = false;
+            this.NaiveBayesGridView.BackgroundColor = System.Drawing.Color.White;
             this.NaiveBayesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NaiveBayesGridView.Location = new System.Drawing.Point(9, 78);
             this.NaiveBayesGridView.Name = "NaiveBayesGridView";
@@ -382,6 +408,7 @@
             // 
             this.MCSVMGridView.AllowUserToAddRows = false;
             this.MCSVMGridView.AllowUserToDeleteRows = false;
+            this.MCSVMGridView.BackgroundColor = System.Drawing.Color.White;
             this.MCSVMGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MCSVMGridView.Location = new System.Drawing.Point(9, 64);
             this.MCSVMGridView.Name = "MCSVMGridView";
@@ -401,9 +428,104 @@
             this.LoadMCSVMArray.UseVisualStyleBackColor = false;
             this.LoadMCSVMArray.Click += new System.EventHandler(this.LoadMCSVMArray_Click);
             // 
+            // LinearRegression
+            // 
+            this.LinearRegression.BackColor = System.Drawing.Color.White;
+            this.LinearRegression.Controls.Add(this.LinearRegressionDataSetSize);
+            this.LinearRegression.Controls.Add(this.LinearRegressionError);
+            this.LinearRegression.Controls.Add(this.LiniearRegressionAccuracy);
+            this.LinearRegression.Controls.Add(this.LinearRegressionDataGridView);
+            this.LinearRegression.Controls.Add(this.TrainLinearRegression);
+            this.LinearRegression.Controls.Add(this.label12);
+            this.LinearRegression.Controls.Add(this.label13);
+            this.LinearRegression.Controls.Add(this.label14);
+            this.LinearRegression.Location = new System.Drawing.Point(4, 22);
+            this.LinearRegression.Name = "LinearRegression";
+            this.LinearRegression.Padding = new System.Windows.Forms.Padding(3);
+            this.LinearRegression.Size = new System.Drawing.Size(776, 535);
+            this.LinearRegression.TabIndex = 4;
+            this.LinearRegression.Text = "Train (Linear Regression)";
+            // 
+            // LinearRegressionDataSetSize
+            // 
+            this.LinearRegressionDataSetSize.AutoSize = true;
+            this.LinearRegressionDataSetSize.Location = new System.Drawing.Point(642, 48);
+            this.LinearRegressionDataSetSize.Name = "LinearRegressionDataSetSize";
+            this.LinearRegressionDataSetSize.Size = new System.Drawing.Size(0, 13);
+            this.LinearRegressionDataSetSize.TabIndex = 14;
+            // 
+            // LinearRegressionError
+            // 
+            this.LinearRegressionError.AutoSize = true;
+            this.LinearRegressionError.Location = new System.Drawing.Point(599, 14);
+            this.LinearRegressionError.Name = "LinearRegressionError";
+            this.LinearRegressionError.Size = new System.Drawing.Size(0, 13);
+            this.LinearRegressionError.TabIndex = 13;
+            // 
+            // LiniearRegressionAccuracy
+            // 
+            this.LiniearRegressionAccuracy.AutoSize = true;
+            this.LiniearRegressionAccuracy.Location = new System.Drawing.Point(474, 14);
+            this.LiniearRegressionAccuracy.Name = "LiniearRegressionAccuracy";
+            this.LiniearRegressionAccuracy.Size = new System.Drawing.Size(0, 13);
+            this.LiniearRegressionAccuracy.TabIndex = 12;
+            // 
+            // LinearRegressionDataGridView
+            // 
+            this.LinearRegressionDataGridView.AllowUserToAddRows = false;
+            this.LinearRegressionDataGridView.AllowUserToDeleteRows = false;
+            this.LinearRegressionDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.LinearRegressionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.LinearRegressionDataGridView.Location = new System.Drawing.Point(8, 69);
+            this.LinearRegressionDataGridView.Name = "LinearRegressionDataGridView";
+            this.LinearRegressionDataGridView.ReadOnly = true;
+            this.LinearRegressionDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LinearRegressionDataGridView.Size = new System.Drawing.Size(760, 413);
+            this.LinearRegressionDataGridView.TabIndex = 11;
+            // 
+            // TrainLinearRegression
+            // 
+            this.TrainLinearRegression.BackColor = System.Drawing.Color.White;
+            this.TrainLinearRegression.Location = new System.Drawing.Point(8, 14);
+            this.TrainLinearRegression.Name = "TrainLinearRegression";
+            this.TrainLinearRegression.Size = new System.Drawing.Size(145, 48);
+            this.TrainLinearRegression.TabIndex = 10;
+            this.TrainLinearRegression.Text = "Train Arrays";
+            this.TrainLinearRegression.UseVisualStyleBackColor = false;
+            this.TrainLinearRegression.Click += new System.EventHandler(this.trainLinearRegression_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(415, 14);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Accuracy";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(563, 14);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(29, 13);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Error";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(563, 49);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 13);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Data Set Size";
+            // 
             // TestingPage
             // 
             this.TestingPage.BackColor = System.Drawing.Color.White;
+            this.TestingPage.Controls.Add(this.NBButten);
             this.TestingPage.Controls.Add(this.TestBestArrayValue);
             this.TestingPage.Controls.Add(this.label5);
             this.TestingPage.Controls.Add(this.TestCalculateButton);
@@ -417,6 +539,17 @@
             this.TestingPage.Size = new System.Drawing.Size(776, 535);
             this.TestingPage.TabIndex = 1;
             this.TestingPage.Text = "Test";
+            // 
+            // NBButten
+            // 
+            this.NBButten.BackColor = System.Drawing.Color.White;
+            this.NBButten.Location = new System.Drawing.Point(50, 222);
+            this.NBButten.Name = "NBButten";
+            this.NBButten.Size = new System.Drawing.Size(238, 40);
+            this.NBButten.TabIndex = 7;
+            this.NBButten.Text = "Compute Naive Bayes";
+            this.NBButten.UseVisualStyleBackColor = false;
+            this.NBButten.Click += new System.EventHandler(this.NBButten_Click);
             // 
             // TestBestArrayValue
             // 
@@ -483,17 +616,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Array Size";
             // 
-            // CheckBoxDecisionTrees
-            // 
-            this.CheckBoxDecisionTrees.AutoSize = true;
-            this.CheckBoxDecisionTrees.BackColor = System.Drawing.Color.White;
-            this.CheckBoxDecisionTrees.Location = new System.Drawing.Point(306, 6);
-            this.CheckBoxDecisionTrees.Name = "CheckBoxDecisionTrees";
-            this.CheckBoxDecisionTrees.Size = new System.Drawing.Size(73, 17);
-            this.CheckBoxDecisionTrees.TabIndex = 9;
-            this.CheckBoxDecisionTrees.Text = "Sort Runs";
-            this.CheckBoxDecisionTrees.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,6 +636,9 @@
             this.MCSVMTab.ResumeLayout(false);
             this.MCSVMTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MCSVMGridView)).EndInit();
+            this.LinearRegression.ResumeLayout(false);
+            this.LinearRegression.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LinearRegressionDataGridView)).EndInit();
             this.TestingPage.ResumeLayout(false);
             this.TestingPage.PerformLayout();
             this.ResumeLayout(false);
@@ -562,6 +687,16 @@
         private System.Windows.Forms.ProgressBar TrainingProgressBarNaiveBayes;
         private System.Windows.Forms.ProgressBar TrainingProgressBarMCSVM;
         private System.Windows.Forms.CheckBox CheckBoxDecisionTrees;
+        private System.Windows.Forms.Button NBButten;
+        private System.Windows.Forms.TabPage LinearRegression;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button TrainLinearRegression;
+        private System.Windows.Forms.DataGridView LinearRegressionDataGridView;
+        private System.Windows.Forms.Label LiniearRegressionAccuracy;
+        private System.Windows.Forms.Label LinearRegressionError;
+        private System.Windows.Forms.Label LinearRegressionDataSetSize;
     }
 }
 

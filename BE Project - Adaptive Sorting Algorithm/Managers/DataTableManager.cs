@@ -17,6 +17,7 @@ using Accord.Statistics.Filters;
 using Accord.Statistics.Kernels;
 using Accord.Statistics.Models.Regression;
 using Accord.Statistics.Models.Regression.Fitting;
+using Accord.Statistics.Models.Regression.Linear;
 
 namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {
@@ -45,8 +46,14 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         private MulticlassSupportVectorLearning mcsvmLearning;
 
         private NaiveBayes nb;
+
+        private MultipleLinearRegression linearRegression;
+
         // Inputs formatted to int[][]
         private int[][] IntInputs;
+        private double[] DoubleOutputs;
+
+        private double rA, rB, rC;
 
         // Labels for the DataTable
         private string[] inputColumns =
@@ -120,11 +127,14 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             string[] cols = {"Array Size", "Runs", "Selected Sorting Algorithm"};
             string[] cols_ip = {"Array Size", "Runs"};
             string cols_op = "Selected Sorting Algorithm";
+
             codebook = new Codification(Table, cols);
             Symbols = codebook.Apply(Table);
             Inputs = Symbols.ToArray(cols_ip);
             Outputs = Symbols.ToArray<int>(cols_op);
+
             IntInputs = Symbols.ToArray<int>(cols_ip);
+            DoubleOutputs = Symbols.ToArray<double>(cols_op);
 
             SymbolCounts = new int[2] { codebook["Array Size"].Symbols, codebook["Runs"].Symbols };
             ClassCount = codebook["Selected Sorting Algorithm"].Symbols;
@@ -157,6 +167,30 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             {
                 double[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
                 int result = tree.Compute(codes);
+                string bestAlgorithm;
+                if (returnNonTranslatedInt)
+                {
+                    bestAlgorithm = result + "";
+                }
+                else
+                {
+                    bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
+                }
+
+                return bestAlgorithm;
+            }
+            catch (Exception ex)
+            {
+                return "Could not match inputs";
+            }
+        }
+
+        public string GetBestAlgorithmForNaiveBayes(string[] input, bool returnNonTranslatedInt)
+        {
+            try
+            {
+                int[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
+                int result = nb.Compute(codes);
                 string bestAlgorithm;
                 if (returnNonTranslatedInt)
                 {
@@ -248,6 +282,51 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 else
                 {
                     bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", result);
+                }
+                return bestAlgorithm;
+            }
+            catch (Exception ex)
+            {
+                return "Could not match inputs";
+            }
+        }
+
+        public void CreateLinearRegression()
+        {
+            linearRegression = new MultipleLinearRegression(2, true);
+        }
+
+        public double LearnLinearRegression()
+        {
+            double error = linearRegression.Regress(Inputs, DoubleOutputs);
+            rA = linearRegression.Coefficients[0];
+            rB = linearRegression.Coefficients[1];
+            rC = linearRegression.Coefficients[2];
+            Console.WriteLine("Regression values : {0}, {1}, {2}", rA, rB, rC);
+            return error;
+        }
+
+        // Actual Selection using MultiClassSupportVectorMachine
+        public string GetBestAlgorithmForLinearRegression(string[] input, bool returnNonTranslatedInt)
+        {
+            try
+            {
+                double[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
+                double result = rA*codes[0] + rB*codes[1] + rC;
+
+                string bestAlgorithm;
+                if (returnNonTranslatedInt)
+                {
+                    bestAlgorithm = (int) Math.Round(result) + "";
+                }
+                else
+                {
+                    bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", (int) Math.Round(result));
+                    if (bestAlgorithm == null)
+                    {
+                        Console.WriteLine("Null at Result = {0}", Math.Round(result));
+                        bestAlgorithm = "Null";
+                    }
                 }
 
                 return bestAlgorithm;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
     {
         private DataTableManager manager;
 
-        private double errorDecisionTree, errorMCSVM, errorNaiveBayes;
+        private double errorDecisionTree, errorMCSVM, errorNaiveBayes, errorLinearRegression;
 
         public MainForm()
         {
@@ -37,12 +38,12 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
         {
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
+
             manager.LoadAllResults();
             manager.SortTable(CheckBoxDecisionTrees.Checked);
 
             ArrayGridView.DataSource = manager.Table;
-
-
+            DataSetSizeValue.Text = manager.Table.Rows.Count + "";
             TrainingProgressBarDecisionTrees.Maximum =
               TrainingProgressBarMCSVM.Maximum = TrainingProgressBarNaiveBayes.Maximum = ArrayGridView.RowCount;
 
@@ -78,7 +79,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             TrainingProgressBarDecisionTrees.Visible = false;
             ErrorLabelValue.Text = Math.Round(errorDecisionTree * 100, 4) + " %";
             AccuracyLabelValue.Text = (100 - (Math.Round(errorDecisionTree * 100, 4))) + " %";
-            DataSetSizeValue.Text = manager.Table.Rows.Count + "";
+
         }
 
         private void LoadMCSVMArray_Click(object sender, EventArgs e)
@@ -181,11 +182,72 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             DataSetSizeNaiveBayes.Text = manager.Table.Rows.Count + "";
         }
 
+        private void trainLinearRegression_Click(object sender, EventArgs e)
+        { 
+            LoadLinearRegression();
+        }
+
+        // Change
+        private void LoadLinearRegression()
+        {
+            if (manager.Table.Rows.Count > 0)
+                manager.Table.Clear();
+            manager.LoadAllResults();
+            manager.SortTable(CheckBoxDecisionTrees.Checked);
+
+            LinearRegressionDataGridView.DataSource = manager.Table;
+
+            manager.Codify();
+            manager.CreateLinearRegression();
+            errorLinearRegression = manager.LearnLinearRegression();
+
+            string[] data = new string[2];
+            string bestAlgo;
+            double correctCounter = 0;
+            for (int i = 0; i < LinearRegressionDataGridView.RowCount; i++)
+            {
+                data[0] = (string)LinearRegressionDataGridView.Rows[i].Cells[0].Value;
+                data[1] = (string)LinearRegressionDataGridView.Rows[i].Cells[1].Value;
+
+                bestAlgo = manager.GetBestAlgorithmForLinearRegression(data, false);
+                if (bestAlgo.Equals(LinearRegressionDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].Value))
+                {
+                    LinearRegressionDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.ForestGreen;
+                    correctCounter++;
+                }
+                else
+                {
+                    LinearRegressionDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.OrangeRed;
+                    LinearRegressionDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].ToolTipText = "Calculated : " + bestAlgo;
+                }
+            }
+            
+            Console.WriteLine("Correct Count : " + correctCounter + " Total Count : " + correctCounter / manager.Table.Rows.Count);
+
+            double count = correctCounter/manager.Table.Rows.Count*100;
+            LinearRegressionError.Text = count + " %";
+            LiniearRegressionAccuracy.Text = (100 - count) + " %";
+            LinearRegressionDataSetSize.Text = manager.Table.Rows.Count + "";
+        }
 
         private void TestCalculateButton_Click(object sender, EventArgs e)
         {
             string[] data = { TestArraySizeTextBox.Text, TestRunsFactorTextBox.Text };
             string bestAlgo = manager.GetBestAlgorithmForInputTree(data, false);
+
+            if (string.IsNullOrEmpty(bestAlgo))
+            {
+                Console.WriteLine("Data {0}, {1} has empty output : {2}", data[0], data[1],
+                    manager.GetBestAlgorithmForInputTree(data, true));
+            }
+
+            TestBestArrayValue.Text = bestAlgo;
+        }
+
+        private void NBButten_Click(object sender, EventArgs e)
+        {
+            string[] data = { TestArraySizeTextBox.Text, TestRunsFactorTextBox.Text };
+            string bestAlgo = manager.GetBestAlgorithmForNaiveBayes(data, false);
 
             if (string.IsNullOrEmpty(bestAlgo))
             {
