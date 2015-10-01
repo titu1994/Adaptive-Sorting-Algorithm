@@ -224,9 +224,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             
             Console.WriteLine("Correct Count : " + correctCounter + " Total Count : " + correctCounter / manager.Table.Rows.Count);
 
-            double count = correctCounter/manager.Table.Rows.Count*100;
-            LinearRegressionError.Text = count + " %";
-            LiniearRegressionAccuracy.Text = (100 - count) + " %";
+            double accuracy = correctCounter/manager.Table.Rows.Count*100;
+            LinearRegressionError.Text = Math.Round(100 - accuracy, 4) + " %"; 
+            LiniearRegressionAccuracy.Text = Math.Round(accuracy, 4) + " %";
             LinearRegressionDataSetSize.Text = manager.Table.Rows.Count + "";
         }
 
