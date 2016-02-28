@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {
-    class JsonManager
+    public class JsonManager
     {
         // File names for Array of size 50
         public static string[] array50 = {

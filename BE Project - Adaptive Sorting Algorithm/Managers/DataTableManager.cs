@@ -24,7 +24,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
     class DataTableManager
     {
         // Original Data table
-        public DataTable Table { get; }
+        public DataTable Table { get; set; }
         // Symbol table generated from Data table
         public DataTable Symbols { get; set; }
 
@@ -34,36 +34,34 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         public int[] Outputs { get; set; }
 
         // Input Symbol Counts
-        private int[] SymbolCounts;
+        protected int[] SymbolCounts;
         // Output Class Counts
-        private int ClassCount;
+        protected int ClassCount;
 
         // ML Algorithms and consequent learning classes
-        private DecisionTree tree;
-        private C45Learning c45;
+        protected DecisionTree tree;
+        protected C45Learning c45;
 
-        private MulticlassSupportVectorMachine mcsvm;
-        private MulticlassSupportVectorLearning mcsvmLearning;
+        protected MulticlassSupportVectorMachine mcsvm;
+        protected MulticlassSupportVectorLearning mcsvmLearning;
 
-        private NaiveBayes nb;
-
-        private MultipleLinearRegression linearRegression;
+        protected NaiveBayes nb;
 
         // Inputs formatted to int[][]
-        private int[][] IntInputs;
-        private double[] DoubleOutputs;
+        protected int[][] IntInputs;
+        protected double[] DoubleOutputs;
 
-        private double rA, rB, rC;
+        protected double rA, rB, rC;
 
         // Labels for the DataTable
-        private string[] inputColumns =
+        protected string[] inputColumns =
         {
             "Array Size", "Runs", /*"Array Type",*/ "Insertion Sort (\u03BCs)", "Shell Sort (\u03BCs)",
             "Heap Sort (\u03BCs)", "Merge Sort (\u03BCs)", "Quick Sort (\u03BCs)", "Parallel Merge Sort (\u03BCs)"
         };
-        private string outputColumn = "Selected Sorting Algorithm";
+        protected string outputColumn = "Selected Sorting Algorithm";
 
-        private Codification codebook;
+        protected Codification codebook;
 
         public DataTableManager()
         {
@@ -127,7 +125,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             string[] cols = {"Array Size", "Runs", "Selected Sorting Algorithm"};
             string[] cols_ip = {"Array Size", "Runs"};
             string cols_op = "Selected Sorting Algorithm";
-
+            
             codebook = new Codification(Table, cols);
             Symbols = codebook.Apply(Table);
             Inputs = Symbols.ToArray(cols_ip);
@@ -141,8 +139,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
             // Declares the Sorting methods needed : All except HeapSort
             var x = codebook["Selected Sorting Algorithm"].Mapping;
-            foreach(var val in x.Keys) 
-                Console.WriteLine(val + "");
+            //foreach(var val in x.Keys) 
+                //Console.WriteLine(val + "");
         }
 
         // Loads up the Decision Tree
@@ -291,52 +289,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             }
         }
 
-        public void CreateLinearRegression()
-        {
-            linearRegression = new MultipleLinearRegression(2, true);
-        }
-
-        public double LearnLinearRegression()
-        {
-            double error = linearRegression.Regress(Inputs, DoubleOutputs);
-            rA = linearRegression.Coefficients[0];
-            rB = linearRegression.Coefficients[1];
-            rC = linearRegression.Coefficients[2];
-            Console.WriteLine("Regression values : {0}, {1}, {2}", rA, rB, rC);
-            return error;
-        }
-
-        // Actual Selection using MultiClassSupportVectorMachine
-        public string GetBestAlgorithmForLinearRegression(string[] input, bool returnNonTranslatedInt)
-        {
-            try
-            {
-                double[] codes = { codebook.Translate("Array Size", input[0]), codebook.Translate("Runs", input[1]) };
-                double result = rA*codes[0] + rB*codes[1] + rC;
-
-                string bestAlgorithm;
-                if (returnNonTranslatedInt)
-                {
-                    bestAlgorithm = (int) Math.Round(result) + "";
-                }
-                else
-                {
-                    bestAlgorithm = codebook.Translate("Selected Sorting Algorithm", (int) Math.Round(result));
-                    if (bestAlgorithm == null)
-                    {
-                        Console.WriteLine("Null at Result = {0}", Math.Round(result));
-                        bestAlgorithm = "Null";
-                    }
-                }
-
-                return bestAlgorithm;
-            }
-            catch (Exception ex)
-            {
-                return "Could not match inputs";
-            }
-        }
-
+       
         // Stores the generated DecisionTree into a .dll file so we can decompile
         // the class and obtain the raw calculations it performs for decisions
         public void SaveTreeFunction()
