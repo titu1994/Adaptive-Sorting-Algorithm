@@ -97,7 +97,7 @@
             this.ResultsPage.Padding = new System.Windows.Forms.Padding(4);
             this.ResultsPage.Size = new System.Drawing.Size(1037, 661);
             this.ResultsPage.TabIndex = 1;
-            this.ResultsPage.Text = "Results";
+            this.ResultsPage.Text = "Results (Adaptive Sort)";
             // 
             // resultDataGridView
             // 
@@ -130,7 +130,7 @@
             // 
             this.dsResult.AutoSize = true;
             this.dsResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.dsResult.Location = new System.Drawing.Point(918, 51);
+            this.dsResult.Location = new System.Drawing.Point(918, 49);
             this.dsResult.Name = "dsResult";
             this.dsResult.Size = new System.Drawing.Size(0, 20);
             this.dsResult.TabIndex = 6;
@@ -158,7 +158,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(808, 51);
+            this.label4.Location = new System.Drawing.Point(808, 49);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 20);
             this.label4.TabIndex = 2;

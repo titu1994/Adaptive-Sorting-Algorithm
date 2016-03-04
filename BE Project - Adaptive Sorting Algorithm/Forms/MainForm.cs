@@ -203,7 +203,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             managerResult.SortTable(false);
 
             resultDataGridView.DataSource = managerResult.Table;
-            dsResult.Text = manager.Table.Rows.Count + "";
+            dsResult.Text = managerResult.Table.Rows.Count + "";
 
             managerResult.Codify();
             managerResult.CreateDecisionTree();
