@@ -16,8 +16,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
     {
         //private DataTableManager manager;
         private ExtendedDataTableManager manager;
+        private ExtendedDataTableManager managerResult;
 
-        private double errorDecisionTree, errorMCSVM, errorNaiveBayes, errorLinearRegression;
+        private double errorDecisionTree, errorMCSVM, errorNaiveBayes, errorResult;
 
         public MainForm()
         {
@@ -25,6 +26,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
 
             //manager = new DataTableManager();
             manager = new ExtendedDataTableManager();
+            managerResult = new ExtendedDataTableManager(true);
 
             TrainingProgressBarDecisionTrees.Minimum =
                 TrainingProgressBarMCSVM.Minimum = TrainingProgressBarNaiveBayes.Minimum = 0;
@@ -90,6 +92,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             TrainingProgressBarMCSVM.Visible = true;
             LoadMCSVM();
         }
+
+        
 
         private void LoadMCSVM()
         {
@@ -185,34 +189,56 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             DataSetSizeNaiveBayes.Text = manager.Table.Rows.Count + "";
         }
 
-       
-        private void TestCalculateButton_Click(object sender, EventArgs e)
+        private void loadAdaptive_Click(object sender, EventArgs e)
         {
-            string[] data = { TestArraySizeTextBox.Text, TestRunsFactorTextBox.Text };
-            string bestAlgo = manager.GetBestAlgorithmForInputTree(data, false);
-
-            if (string.IsNullOrEmpty(bestAlgo))
-            {
-                Console.WriteLine("Data {0}, {1} has empty output : {2}", data[0], data[1],
-                    manager.GetBestAlgorithmForInputTree(data, true));
-            }
-
-            TestBestArrayValue.Text = bestAlgo;
+            LoadDecisionTreeAdaptive();
         }
 
-        private void NBButten_Click(object sender, EventArgs e)
+        private void LoadDecisionTreeAdaptive()
         {
-            string[] data = { TestArraySizeTextBox.Text, TestRunsFactorTextBox.Text };
-            string bestAlgo = manager.GetBestAlgorithmForNaiveBayes(data, false);
+            if (managerResult.Table.Rows.Count > 0)
+                managerResult.Table.Clear();
 
-            if (string.IsNullOrEmpty(bestAlgo))
+            managerResult.LoadAllResultsWithAdaptiveData();
+            managerResult.SortTable(false);
+
+            resultDataGridView.DataSource = managerResult.Table;
+            dsResult.Text = manager.Table.Rows.Count + "";
+
+            managerResult.Codify();
+            managerResult.CreateDecisionTree();
+            errorDecisionTree = managerResult.TreeLearn();
+
+            string[] data = new string[2];
+            string bestAlgo;
+            int adaptiveCount = 0;
+            for (int i = 0; i < resultDataGridView.RowCount; i++)
             {
-                Console.WriteLine("Data {0}, {1} has empty output : {2}", data[0], data[1],
-                    manager.GetBestAlgorithmForInputTree(data, true));
+                data[0] = (string)resultDataGridView.Rows[i].Cells[0].Value;
+                data[1] = (string)resultDataGridView.Rows[i].Cells[1].Value;
+                
+                if ("Adaptive Sort".Equals(resultDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].Value))
+                {
+                    adaptiveCount++;
+                    resultDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.ForestGreen;
+                }
+                else
+                {
+                    resultDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].Style.BackColor = Color.OrangeRed;
+                    //resultDataGridView.Rows[i].Cells["Selected Sorting Algorithm"].ToolTipText = "Calculated : " + bestAlgo;
+                }
+                
             }
 
-            TestBestArrayValue.Text = bestAlgo;
+            //errResult.Text = Math.Round(errorDecisionTree * 100, 4) + " %";
+            //accResult.Text = (100 - (Math.Round(errorDecisionTree * 100, 4))) + " %";
+
+            accResult.Text = Math.Round(adaptiveCount * 100 / (float) resultDataGridView.RowCount, 4) + " %";
+            errResult.Text = Math.Round(100 - 100 * adaptiveCount / (float)resultDataGridView.RowCount, 4) + " %";
+
+
         }
+
 
     }
 }
