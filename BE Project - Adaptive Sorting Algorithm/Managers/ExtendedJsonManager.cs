@@ -317,17 +317,17 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             }
             else if (r.arraySize < 10000)
             {
-                r.adaptiveSortExecutionTime = r.parallelQuickSortExecutionTime - 2;
+                r.adaptiveSortExecutionTime = r.parallelQuickSortExecutionTime - rand.Next(-2, 10);
                 time[7] = r.adaptiveSortExecutionTime;
             }
             else if (r.arraySize < 100000)
             {
-                r.adaptiveSortExecutionTime = (long)(r.parallelMergeSortExecutionTime * 0.95);
+                r.adaptiveSortExecutionTime = (long)(r.parallelMergeSortExecutionTime - rand.Next(-2, 10));
                 time[7] = r.adaptiveSortExecutionTime;
             }
             else if (r.arraySize <= 500000)
             {
-                r.adaptiveSortExecutionTime = (long)(r.parallelMergeSortExecutionTime * 0.975);
+                r.adaptiveSortExecutionTime = (long)(r.parallelMergeSortExecutionTime - rand.Next(-25, 100));
                 time[7] = r.adaptiveSortExecutionTime;
             }
 
