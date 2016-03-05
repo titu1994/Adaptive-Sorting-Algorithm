@@ -16,9 +16,6 @@ using Accord.MachineLearning.VectorMachines.Learning;
 using Accord.Math;
 using Accord.Statistics.Filters;
 using Accord.Statistics.Kernels;
-using Accord.Statistics.Models.Regression;
-using Accord.Statistics.Models.Regression.Fitting;
-using Accord.Statistics.Models.Regression.Linear;
 
 namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {

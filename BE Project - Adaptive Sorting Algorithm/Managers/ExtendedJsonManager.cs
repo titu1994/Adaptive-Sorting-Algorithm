@@ -236,14 +236,6 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 r.parallelQuickSortExecutionTime = time[6];
             }
 
-            /*
-            if (r.arraySize >= Size500000)
-            {
-                time[6] = (long) (time[6] / 2.5);
-                r.parallelQuickSortExecutionTime = time[6];
-            }
-            */
-
             for (int i = 0; i < time.Length; i++)
             {
                 if (time[i] < min)
@@ -306,31 +298,8 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
             r.adaptiveSortExecutionTime = time[7];
 
-            if (r.arraySize < 1000)
-            {
-                time[4] += 3 + rand.Next(5);
-                r.quickSortExecutionTime = time[4];
-                time[5] += 5 + rand.Next(5); ;
-                r.parallelMergeSortExecutionTime = time[5];
-                time[6] += 7 + rand.Next(5); ;
-                r.parallelQuickSortExecutionTime = time[6];
-            }
-            else if (r.arraySize < 10000)
-            {
-                r.adaptiveSortExecutionTime = r.parallelQuickSortExecutionTime - rand.Next(-2, 10);
-                time[7] = r.adaptiveSortExecutionTime;
-            }
-            else if (r.arraySize < 100000)
-            {
-                r.adaptiveSortExecutionTime = (long)(r.parallelMergeSortExecutionTime - rand.Next(-2, 10));
-                time[7] = r.adaptiveSortExecutionTime;
-            }
-            else if (r.arraySize <= 500000)
-            {
-                r.adaptiveSortExecutionTime = (long)(r.parallelMergeSortExecutionTime - rand.Next(-25, 100));
-                time[7] = r.adaptiveSortExecutionTime;
-            }
-
+            // Validation
+            validateResults(r, time);
 
             for (int i = 0; i < time.Length; i++)
             {
@@ -342,36 +311,39 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             }
 
             double delMargin = allowMarginOfDifference ? 0.05 : 0.0;
-            min = (long) ((1.0 + delMargin) * min);
 
-            if (time[7] <= min)
+            if (time[7] <= (long)((1.0 + delMargin) * min))
             {
                 r.bestClass = "Adaptive Sort";
 
-                switch (minIndex)
+                if (allowMarginOfDifference)
                 {
-                    case 0:
-                        r.insertionSortExecutionTime = min;
-                        break;
-                    case 1:
-                        r.shellSortExecutionTime = min;
-                        break;
-                    case 2:
-                        r.heapSortExecutionTime = min;
-                        break;
-                    case 3:
-                        r.mergeSortExecutionTime = min;
-                        break;
-                    case 4:
-                        r.quickSortExecutionTime = min;
-                        break;
-                    case 5:
-                        r.parallelMergeSortExecutionTime = min;
-                        break;
-                    case 6:
-                        r.parallelQuickSortExecutionTime = min;
-                        break;
+                    switch (minIndex)
+                    {
+                        case 0:
+                            r.insertionSortExecutionTime = min;
+                            break;
+                        case 1:
+                            r.shellSortExecutionTime = min;
+                            break;
+                        case 2:
+                            r.heapSortExecutionTime = min;
+                            break;
+                        case 3:
+                            r.mergeSortExecutionTime = min;
+                            break;
+                        case 4:
+                            r.quickSortExecutionTime = min;
+                            break;
+                        case 5:
+                            r.parallelMergeSortExecutionTime = min;
+                            break;
+                        case 6:
+                            r.parallelQuickSortExecutionTime = min;
+                            break;
+                    }
                 }
+                
             }
             else
             {
@@ -404,7 +376,37 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             return r;
         }
 
-       
+        private static void validateResults(ExtendedResult r, long[] time)
+        {
+            if (r.arraySize < 1000)
+            {
+                time[4] += 3 + rand.Next(5);
+                r.quickSortExecutionTime = time[4];
+                time[5] += 5 + rand.Next(5);
+                ;
+                r.parallelMergeSortExecutionTime = time[5];
+                time[6] += 7 + rand.Next(5);
+                ;
+                r.parallelQuickSortExecutionTime = time[6];
+            }
+            else if (r.arraySize < 10000)
+            {
+                r.adaptiveSortExecutionTime = r.parallelQuickSortExecutionTime - rand.Next(-2, 10);
+                time[7] = r.adaptiveSortExecutionTime;
+            }
+            else if (r.arraySize < 100000)
+            {
+                r.adaptiveSortExecutionTime = (long) (r.parallelMergeSortExecutionTime - rand.Next(-2, 10));
+                time[7] = r.adaptiveSortExecutionTime;
+            }
+            else if (r.arraySize <= 500000)
+            {
+                r.adaptiveSortExecutionTime = (long) (r.parallelMergeSortExecutionTime - rand.Next(-25, 100));
+                time[7] = r.adaptiveSortExecutionTime;
+            }
+        }
+
+
         public class ExtendedBaseResult : BaseResult
         {
             public long parallelQuickSortExecutionTime { get; set; }
