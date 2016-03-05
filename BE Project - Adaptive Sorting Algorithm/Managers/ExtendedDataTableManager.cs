@@ -104,7 +104,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
             ExtendedJsonManager.ExtendedResult result;
 
-            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/CSV Data/"; Directory.CreateDirectory(path);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/CSV Data/";
             string fn = "Results.csv";
             StreamWriter writer = null;
 
