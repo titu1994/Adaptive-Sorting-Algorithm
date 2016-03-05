@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Accord.MachineLearning.Bayes;
 using Accord.MachineLearning.DecisionTrees;
 using Accord.MachineLearning.DecisionTrees.Learning;
@@ -21,6 +22,18 @@ using Accord.Statistics.Models.Regression.Linear;
 
 namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {
+    public static class ExtensionMethods
+    {
+        public static void DoubleBuffered(this DataGridView dgv, bool setting)
+        {
+            Type dgvType = dgv.GetType();
+            PropertyInfo pi = dgvType.GetProperty("DoubleBuffered",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            pi.SetValue(dgv, setting, null);
+        }
+    }
+
+
     class DataTableManager
     {
         // Original Data table
@@ -117,6 +130,11 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 Table.DefaultView.Sort = "Array Size ASC";
             }
         }
+
+
+       
+
+
 
         // Convert Data Table of strings into double[] inputs and int output
         // Constructs the Symbol table

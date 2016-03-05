@@ -282,7 +282,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             return r;
         }
 
-        public static ExtendedResult ParseCombinedResult(string[] resultStrings)
+        public static ExtendedResult ParseCombinedResult(string[] resultStrings, bool allowMarginOfDifference = false)
         {
             ExtendedBaseResult br = JsonConvert.DeserializeObject<ExtendedBaseResult>(resultStrings[0]);
             ExtendedResult r = new ExtendedResult(br);
@@ -341,9 +341,37 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                 }
             }
 
+            double delMargin = allowMarginOfDifference ? 0.05 : 0.0;
+            min = (long) ((1.0 + delMargin) * min);
+
             if (time[7] <= min)
             {
                 r.bestClass = "Adaptive Sort";
+
+                switch (minIndex)
+                {
+                    case 0:
+                        r.insertionSortExecutionTime = min;
+                        break;
+                    case 1:
+                        r.shellSortExecutionTime = min;
+                        break;
+                    case 2:
+                        r.heapSortExecutionTime = min;
+                        break;
+                    case 3:
+                        r.mergeSortExecutionTime = min;
+                        break;
+                    case 4:
+                        r.quickSortExecutionTime = min;
+                        break;
+                    case 5:
+                        r.parallelMergeSortExecutionTime = min;
+                        break;
+                    case 6:
+                        r.parallelQuickSortExecutionTime = min;
+                        break;
+                }
             }
             else
             {
@@ -376,6 +404,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             return r;
         }
 
+       
         public class ExtendedBaseResult : BaseResult
         {
             public long parallelQuickSortExecutionTime { get; set; }

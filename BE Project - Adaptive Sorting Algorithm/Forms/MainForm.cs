@@ -43,6 +43,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
         {
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
+
+            // See DataTable Manager for Extention Method
+            ArrayGridView.DoubleBuffered(true);
             
             manager.LoadAllResults();
             manager.SortTable(CheckBoxDecisionTrees.Checked);
@@ -93,14 +96,14 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             LoadMCSVM();
         }
 
-        
-
         private void LoadMCSVM()
         {
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
-            manager.LoadAllResults();
 
+            MCSVMGridView.DoubleBuffered(true);
+
+            manager.LoadAllResults();
             MCSVMGridView.DataSource = manager.Table;
 
             TrainingProgressBarDecisionTrees.Maximum =
@@ -149,6 +152,9 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
         {
             if (manager.Table.Rows.Count > 0)
                 manager.Table.Clear();
+
+            NaiveBayesGridView.DoubleBuffered(true);
+
             manager.LoadAllResults();
             manager.SortTable(CheckBoxDecisionTrees.Checked);
 
@@ -199,7 +205,11 @@ namespace BE_Project___Adaptive_Sorting_Algorithm
             if (managerResult.Table.Rows.Count > 0)
                 managerResult.Table.Clear();
 
-            managerResult.LoadAllResultsWithAdaptiveData();
+            resultDataGridView.DoubleBuffered(true);
+
+            bool allowMarginDifference = allowMarginOfDifferenceCheckBox.Checked;
+
+            managerResult.LoadAllResultsWithAdaptiveData(saveToFile: false, marginOfDifference: allowMarginDifference);
             managerResult.SortTable(false);
 
             resultDataGridView.DataSource = managerResult.Table;

@@ -69,6 +69,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ErrorLabelValue = new System.Windows.Forms.Label();
             this.TabController = new System.Windows.Forms.TabControl();
+            this.allowMarginOfDifferenceCheckBox = new System.Windows.Forms.CheckBox();
             this.ResultsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultDataGridView)).BeginInit();
             this.MCSVMTab.SuspendLayout();
@@ -83,6 +84,7 @@
             // ResultsPage
             // 
             this.ResultsPage.BackColor = System.Drawing.Color.White;
+            this.ResultsPage.Controls.Add(this.allowMarginOfDifferenceCheckBox);
             this.ResultsPage.Controls.Add(this.resultDataGridView);
             this.ResultsPage.Controls.Add(this.errResult);
             this.ResultsPage.Controls.Add(this.dsResult);
@@ -106,8 +108,6 @@
             this.resultDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.resultDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.resultDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.resultDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.resultDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.resultDataGridView.Location = new System.Drawing.Point(8, 97);
@@ -395,8 +395,6 @@
             this.NaiveBayesGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NaiveBayesGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.NaiveBayesGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.NaiveBayesGridView.BackgroundColor = System.Drawing.Color.White;
             this.NaiveBayesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.NaiveBayesGridView.Location = new System.Drawing.Point(12, 96);
@@ -471,8 +469,6 @@
             this.ArrayGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ArrayGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.ArrayGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.ArrayGridView.BackgroundColor = System.Drawing.Color.White;
             this.ArrayGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ArrayGridView.GridColor = System.Drawing.Color.White;
@@ -570,6 +566,16 @@
             this.TabController.Size = new System.Drawing.Size(1045, 690);
             this.TabController.TabIndex = 9;
             // 
+            // allowMarginOfDifferenceCheckBox
+            // 
+            this.allowMarginOfDifferenceCheckBox.AutoSize = true;
+            this.allowMarginOfDifferenceCheckBox.Location = new System.Drawing.Point(273, 9);
+            this.allowMarginOfDifferenceCheckBox.Name = "allowMarginOfDifferenceCheckBox";
+            this.allowMarginOfDifferenceCheckBox.Size = new System.Drawing.Size(222, 21);
+            this.allowMarginOfDifferenceCheckBox.TabIndex = 9;
+            this.allowMarginOfDifferenceCheckBox.Text = "Allow 5 % Margin of Difference";
+            this.allowMarginOfDifferenceCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -577,6 +583,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1045, 690);
             this.Controls.Add(this.TabController);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -641,6 +648,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button loadAdaptive;
         private System.Windows.Forms.DataGridView resultDataGridView;
+        private System.Windows.Forms.CheckBox allowMarginOfDifferenceCheckBox;
     }
 }
 

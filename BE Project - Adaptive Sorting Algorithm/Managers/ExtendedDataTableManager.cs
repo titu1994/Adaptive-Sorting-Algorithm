@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 {
@@ -89,7 +91,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
             }
         }
 
-        public void LoadAllResultsWithAdaptiveData()
+        public void LoadAllResultsWithAdaptiveData(bool saveToFile = false, bool marginOfDifference = false)
         {
             string filename, filename2;
             string[][] arrays = { ExtendedJsonManager.array100, ExtendedJsonManager.array1000, ExtendedJsonManager.array10000,
@@ -102,6 +104,24 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
             ExtendedJsonManager.ExtendedResult result;
 
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/CSV Data/"; Directory.CreateDirectory(path);
+            string fn = "Results.csv";
+            StreamWriter writer = null;
+
+            if (saveToFile)
+            {
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                writer = new StreamWriter(path + fn)
+                {
+                    AutoFlush = true
+                };
+                writer.WriteLine("Array Size,Runs,Insertion Sort,Shell Sort,Heap Sort,Merge Sort,Quick Sort,Parallel Merge Sort,Parallel Quick Sort,Adaptive Sort,Best Algorithm");
+            }
+
+            string resultLine = "";
+
             for (int i = 0; i < arrays.Length; i++)
             {
                 for (int j = 0; j < arrays[i].Length; j++)
@@ -110,13 +130,34 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
                     filename2 = arraysOfAdaptiveData[i][j];
                     foreach (string[] jsons in ExtendedJsonManager.GetNextCombinedResult(filename, filename2))
                     {
-                        //Console.WriteLine("File 1 (i,j): " + jsons[0] + "(" + i + "," + j + ")");
-                        //Console.WriteLine("File 2 (i,j): " + jsons[1] + "(" + i + "," + j + ")");
+                        result = ExtendedJsonManager.ParseCombinedResult(jsons, allowMarginOfDifference: marginOfDifference);
 
-                        result = ExtendedJsonManager.ParseCombinedResult(jsons);
+                        if (saveToFile)
+                        {
+                            resultLine = result.arraySize + "," +
+                                         result.runs + "," +
+                                         result.insertionSortExecutionTime + "," + 
+                                         result.shellSortExecutionTime + "," + 
+                                         result.heapSortExecutionTime + "," + 
+                                         result.mergeSortExecutionTime + "," +
+                                         result.quickSortExecutionTime + "," + 
+                                         result.parallelMergeSortExecutionTime + "," +
+                                         result.parallelQuickSortExecutionTime + "," +
+                                         result.adaptiveSortExecutionTime + ",'" +
+                                         result.bestClass + "'";
+                            
+                            writer.WriteLine(resultLine);
+                        }
+
                         AddResultWithAdaptiveSort(result);
                     }
                 }
+            }
+
+            if (saveToFile)
+            {
+                writer.Flush();
+                writer.Close();
             }
             
         }
