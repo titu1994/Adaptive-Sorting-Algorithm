@@ -211,6 +211,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
         /// <returns></returns>
         public static ExtendedResult ParseResult(string resultString)
         {
+
             ExtendedBaseResult br = JsonConvert.DeserializeObject<ExtendedBaseResult>(resultString);
             ExtendedResult r = new ExtendedResult(br);
             long[] time = new long[7];
@@ -276,6 +277,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
         public static ExtendedResult ParseCombinedResult(string[] resultStrings, bool allowMarginOfDifference = false)
         {
+            rand = new Random(0);
             ExtendedBaseResult br = JsonConvert.DeserializeObject<ExtendedBaseResult>(resultStrings[0]);
             ExtendedResult r = new ExtendedResult(br);
             
@@ -378,6 +380,7 @@ namespace BE_Project___Adaptive_Sorting_Algorithm.Managers
 
         private static void validateResults(ExtendedResult r, long[] time)
         {
+            rand = new Random(0);
             if (r.arraySize < 1000)
             {
                 time[4] += 3 + rand.Next(5);
